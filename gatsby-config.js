@@ -4,6 +4,10 @@ module.exports = {
     description: 'Your integration partner in smart, secure and multimedia appliances.',
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-material-ui`,
+      options: {},
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,

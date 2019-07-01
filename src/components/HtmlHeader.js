@@ -1,8 +1,9 @@
-import React from "react";
-import { Helmet } from "react-helmet";
-import { useStaticQuery, graphql } from "gatsby";
+import React from "react"
+import { Helmet } from "react-helmet"
+import { useStaticQuery, graphql } from "gatsby"
+import "./header.css"
 
-const HtmlHeader = ({ title, description = "", meta = [] }) => {
+const HtmlHeader = ({ title = "", description = "", meta = [] }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -14,38 +15,41 @@ const HtmlHeader = ({ title, description = "", meta = [] }) => {
         }
       }
     `
-  );
+  )
 
-  const content = description || site.siteMetadata.description;
+  const content = description || site.siteMetadata.description
 
   return (
     <Helmet
       htmlAttributes={{
-        lang: "sk"
+        lang: "sk",
       }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      title={
+        title
+          ? `${title} | ${site.siteMetadata.title}`
+          : site.siteMetadata.title
+      }
       meta={[
         {
           name: `description`,
-          content
+          content,
         },
         {
           property: `og:title`,
-          content: title
+          content: title,
         },
         {
           property: `og:description`,
-          content
+          content,
         },
         {
           property: `og:type`,
-          content: `website`
+          content: `website`,
         },
-        ...meta
+        ...meta,
       ]}
     />
-  );
-};
+  )
+}
 
-export default HtmlHeader;
+export default HtmlHeader

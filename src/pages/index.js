@@ -14,9 +14,12 @@ const IndexPage = () => (
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
     <div style={{ height: "500px" }} />
-    <div id="foo">
-      <h1>Foo</h1>
-    </div>
+    <Hero
+      id="foo"
+      title="Foo"
+      subtitle="Foo bar baz blah"
+      imageSrc="https://unsplash.it/2000/1000"
+    />
     <div style={{ height: "500px" }} />
     <div id="bar">
       <h1>Bar</h1>

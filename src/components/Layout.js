@@ -15,11 +15,6 @@ import SmoothScroll from "smooth-scroll"
 import { Location, navigate } from "@reach/router"
 import { SocialIcon } from "react-social-icons"
 
-if (typeof window !== "undefined") {
-  // Make scroll behavior of internal links smooth
-  new SmoothScroll('a[data-href*="#"]', { offset: 130 })
-}
-
 const buttonStyles = theme => ({
   fontWeight: "normal",
   textTransform: "none",
@@ -75,7 +70,6 @@ const active = hash =>
 
 const Layout = ({ title = "", children }) => {
   useEffect(() => {
-    console.log("effect")
     if (window) {
       const e =
         window.location.hash && document.querySelector(window.location.hash)

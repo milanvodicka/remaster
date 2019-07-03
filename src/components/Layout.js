@@ -7,12 +7,11 @@ import {
   Button,
   makeStyles,
   Grid,
-  Container,
 } from "@material-ui/core"
 import "typeface-roboto"
 import Phone from "@material-ui/icons/Phone"
 import SmoothScroll from "smooth-scroll"
-import { Location, navigate } from "@reach/router"
+import { navigate } from "@reach/router"
 import { SocialIcon } from "react-social-icons"
 
 const buttonStyles = theme => ({
@@ -53,12 +52,28 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
+const scrollTo = (id = null) => {
+  if (window) {
+    const e = id && document.querySelector(`#${id}`)
+    const scroll = new SmoothScroll()
+    if (e) {
+      scroll.animateScroll(e.offsetTop - 130)
+    } else {
+      scroll.animateScroll(0)
+    }
+  }
+}
+
 const navigation = classes => ({ name, anchor = null, active = false }) => (
-  <a className={classes.a} data-href={`#${anchor || ""}`}>
+  <a className={classes.a}>
     <Button
       variant="contained"
       className={active ? classes.buttonActive : classes.button}
-      onClick={() => navigate(anchor ? `#${anchor}` : "/")}
+      onClick={() => {
+        const url = anchor ? `#${anchor}` : "/"
+        navigate(url)
+        scrollTo(anchor)
+      }}
     >
       {name}
     </Button>
@@ -71,14 +86,7 @@ const active = hash =>
 const Layout = ({ title = "", children }) => {
   useEffect(() => {
     if (window) {
-      const e =
-        window.location.hash && document.querySelector(window.location.hash)
-      const scroll = new SmoothScroll()
-      if (e) {
-        scroll.animateScroll(e.offsetTop - 130)
-      } else {
-        scroll.animateScroll(0)
-      }
+      scrollTo(window.location.hash.substring(1))
     }
   }, [window.location.hash])
   const classes = useStyles()
@@ -151,7 +159,7 @@ const Layout = ({ title = "", children }) => {
                   </Typography>
                 </Grid>
                 <Grid item>
-                  <Nav name="Home" active={active("#") || active("")} />
+                  <Nav name="Home" active={active("")} />
                   <Nav name="Foo" anchor="foo" active={active("#foo")} />
                   <Nav name="Bar" anchor="bar" active={active("#bar")} />
                   <Nav name="Baz" anchor="baz" active={active("#baz")} />
@@ -161,11 +169,6 @@ const Layout = ({ title = "", children }) => {
           </Grid>
         </Grid>
       </AppBar>
-      <Location>
-        {({ location }) => {
-          console.log("Location: ", location)
-        }}
-      </Location>
       <div className={classes.container}>{children}</div>
     </>
   )

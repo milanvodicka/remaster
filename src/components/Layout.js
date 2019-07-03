@@ -13,6 +13,7 @@ import "typeface-roboto"
 import Phone from "@material-ui/icons/Phone"
 import SmoothScroll from "smooth-scroll"
 import { Location, navigate } from "@reach/router"
+import { SocialIcon } from "react-social-icons"
 
 if (typeof window !== "undefined") {
   // Make scroll behavior of internal links smooth
@@ -48,11 +49,11 @@ const useStyles = makeStyles(theme => ({
     },
   },
   socialIcon: {
-    textTransform: "none",
-    color: "#FFFFFF",
-    fontWeight: "normal",
-    "&:hover": {
-      textDecoration: "underline",
+    height: "25px !important",
+    width: "25px !important",
+    marginLeft: theme.spacing(0.5),
+    "& .social-svg-mask:hover": {
+      fill: "rgb(236, 85, 56) !important",
     },
   },
 }))
@@ -62,7 +63,7 @@ const navigation = classes => ({ name, anchor = null, active = false }) => (
     <Button
       variant="contained"
       className={active ? classes.buttonActive : classes.button}
-      onClick={() => navigate(anchor ? `#${anchor}` : '/')}
+      onClick={() => navigate(anchor ? `#${anchor}` : "/")}
     >
       {name}
     </Button>
@@ -76,7 +77,8 @@ const Layout = ({ title = "", children }) => {
   useEffect(() => {
     console.log("effect")
     if (window) {
-      const e = window.location.hash && document.querySelector(window.location.hash)
+      const e =
+        window.location.hash && document.querySelector(window.location.hash)
       const scroll = new SmoothScroll()
       if (e) {
         scroll.animateScroll(e.offsetTop - 130)
@@ -110,12 +112,29 @@ const Layout = ({ title = "", children }) => {
                 <Grid item>
                   <Grid container direction="row" alignItems="center">
                     <Phone fontSize="small" />
-                    <Typography variant="body2">+421 907 574 291</Typography>
+                    <Typography variant="body2">
+                      <a
+                        href="tel:+421907574291"
+                        style={{ color: "#FFF", textDecoration: "none" }}
+                      >
+                        +421 907 574 291
+                      </a>
+                    </Typography>
                   </Grid>
                 </Grid>
                 <Grid item>
-                  <Button className={classes.socialIcon}>Facebook</Button>
-                  <Button className={classes.socialIcon}>Linked In</Button>
+                  <SocialIcon
+                    network="facebook"
+                    bgColor="#404040"
+                    className={classes.socialIcon}
+                    url="#"
+                  />
+                  <SocialIcon
+                    network="linkedin"
+                    bgColor="#404040"
+                    className={classes.socialIcon}
+                    url="#"
+                  />
                 </Grid>
               </Grid>
             </Toolbar>
@@ -125,7 +144,14 @@ const Layout = ({ title = "", children }) => {
               <Grid container justify="space-between">
                 <Grid item>
                   <Typography variant="h5" noWrap>
-                    <a className={classes.a} href="#" onClick={(e) => { navigate('/'); e.preventDefault()}}>
+                    <a
+                      className={classes.a}
+                      href="#"
+                      onClick={e => {
+                        navigate("/")
+                        e.preventDefault()
+                      }}
+                    >
                       Remaster
                     </a>
                   </Typography>

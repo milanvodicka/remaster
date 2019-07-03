@@ -172,7 +172,7 @@ const Layout = ({ title = "", children }) => {
           console.log("Location: ", location)
         }}
       </Location>
-      <Container className={classes.container}>{children}</Container>
+      <div className={classes.container}>{children}</div>
     </>
   )
 }

@@ -20,8 +20,10 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
+    "react-lazy-hero": "^2.0.0",
     "react-social-icons": "^4.1.0",
     "smooth-scroll": "^16.1.0",
+    "styled-components": "^4.3.2",
     "typeface-roboto": "0.0.54"
   },
   "devDependencies": {

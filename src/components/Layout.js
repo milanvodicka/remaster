@@ -13,6 +13,7 @@ import Phone from "@material-ui/icons/Phone"
 import SmoothScroll from "smooth-scroll"
 import { navigate } from "@reach/router"
 import { SocialIcon } from "react-social-icons"
+import ScrollSpy from "./ScrollSpy"
 
 const buttonStyles = theme => ({
   fontWeight: "normal",
@@ -79,9 +80,6 @@ const navigation = classes => ({ name, anchor = null, active = false }) => (
     </Button>
   </a>
 )
-
-const active = hash =>
-  window && window.location && window.location.hash === hash
 
 const Layout = ({ title = "", children }) => {
   useEffect(() => {
@@ -159,10 +157,16 @@ const Layout = ({ title = "", children }) => {
                   </Typography>
                 </Grid>
                 <Grid item>
-                  <Nav name="Home" active={active("")} />
-                  <Nav name="Foo" anchor="foo" active={active("#foo")} />
-                  <Nav name="Bar" anchor="bar" active={active("#bar")} />
-                  <Nav name="Baz" anchor="baz" active={active("#baz")} />
+                  <ScrollSpy ids={["foo", "bar", "baz"]}>
+                    {ids => console.log('foo: ', ids) || (
+                      <>
+                        <Nav name="Home" active={ids.top} />
+                        <Nav name="Foo" anchor="foo" active={ids.foo} />
+                        <Nav name="Bar" anchor="bar" active={ids.bar} />
+                        <Nav name="Baz" anchor="baz" active={ids.baz} />
+                      </>
+                    )}
+                  </ScrollSpy>
                 </Grid>
               </Grid>
             </Toolbar>

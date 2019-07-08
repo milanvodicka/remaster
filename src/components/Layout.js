@@ -158,7 +158,7 @@ const Layout = ({ title = "", children }) => {
                 </Grid>
                 <Grid item>
                   <ScrollSpy ids={["foo", "bar", "baz"]}>
-                    {ids => console.log('foo: ', ids) || (
+                    {ids => (
                       <>
                         <Nav name="Home" active={ids.top} />
                         <Nav name="Foo" anchor="foo" active={ids.foo} />

@@ -1,27 +1,25 @@
 export const idsInViewport = ids => {
-  if (!window) return ids.reduce((acc, id) => ({ [id]: false, ...acc }), { top: true })
-  const { pageYOffset, innerHeight } = window
-  return ids
-    .map(id => {
-      const e = document.getElementById(id)
-      const { offsetTop, scrollHeight } = e
-      const inViewport = a => a >= pageYOffset && a <= pageYOffset + innerHeight
-      return [
-        id,
-        inViewport(offsetTop) || inViewport(offsetTop + scrollHeight),
-        offsetTop,
-      ]
-    })
-    .sort(([, , offsetA], [, , offsetB]) => offsetA - offsetB)
-    .reduce(({ gotCurrent, ids }, [id, inViewport]) => ({
-      ids: {
-        [id]: gotCurrent ? false : inViewport,
-        ...ids
+  if (!window)
+    return ids.reduce((acc, id) => ({ [id]: false, ...acc }), { top: true })
+
+  const inViewport = (offset) => offset <= window.pageYOffset + 130
+
+  const offsets = ids
+    .map(id => [id, document.getElementById(id).offsetTop])
+    .sort(([, offsetA], [, offsetB]) => offsetB - offsetA)
+
+  return [...offsets, ['top', 0]]
+    .reduce(
+      ({ wasSet, ids }, [id, offset]) => {
+        const isIn = !wasSet && (inViewport(offset) || offset === 0)
+        return {
+          wasSet: wasSet || isIn,
+          ids: {
+            [id]: isIn,
+            ...ids,
+          },
+        }
       },
-      gotCurrent: gotCurrent || inViewport
-    }), {
-      gotCurrent: pageYOffset === 0,
-      ids: {top: pageYOffset === 0 },
-    })
-    .ids
+      { wasSet: false, ids: {} }
+    ).ids
 }

@@ -1,6 +1,7 @@
 import React from "react"
 import Layout from "../components/Layout"
 import Hero from "../components/Hero"
+import Portfolio from "../components/Portfolio"
 
 const IndexPage = () => (
   <Layout>
@@ -20,9 +21,13 @@ const IndexPage = () => (
       imageSrc="https://unsplash.it/2000/1000"
     />
     <div style={{ height: "500px" }} />
-    <div id="bar">
-      <h1>Bar</h1>
-    </div>
+    <Hero
+      id="bar"
+      title="Bar"
+      subtitle="Portfolio"
+      imageSrc="https://unsplash.it/2000/1000"
+    />
+    <Portfolio titles={['A', 'B', 'C', 'D', 'E', 'F', 'G']} />
     <div style={{ height: "500px" }} />
     <div id="baz">
       <h1>Baz</h1>

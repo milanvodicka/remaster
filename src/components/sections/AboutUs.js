@@ -7,14 +7,14 @@ const AboutUs = () => {
   return (
     <>
       <Hero
-        id="o-nas"
+        id="onas"
         title="O nás"
         subtitle="Technológie pre modernú domácnosť, alebo firmu."
         imageSrc="https://unsplash.it/2000/1000"
       />
-      <Container style={{ marginTop: theme.spacing(4) }}>
-        <Grid container direction="row">
-          <Grid item style={{ flex: 1 }}>
+      <Container style={{ marginTop: theme.spacing(4), marginBottom: theme.spacing(4) }}>
+        <Grid container spacing={2}>
+          <Grid item sm={6}>
             <Typography variant="body1">
               Mnohí zákazníci hľadajú spolahlivého dodávateľa, ktorý by im
               zabezpečil technológiu pre modernú domácnosť, alebo firmu. Či už
@@ -24,8 +24,7 @@ const AboutUs = () => {
               kina, u nás nájdete komplexný záber pre všetky tieto odvetvia.
             </Typography>
           </Grid>
-          <Grid item style={{ width: theme.spacing(4) }}/>
-          <Grid item style={{ flex: 1 }}>
+          <Grid item sm={6}>
             <Typography variant="body1">
               Sme moderná spoločnosť, ktorá sa orientuje najmä na poskytovanie
               služieb a dobrého servisu, a preto ponúkame našim zákazníkom pomoc

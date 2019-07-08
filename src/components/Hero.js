@@ -2,7 +2,7 @@ import React from "react"
 import { makeStyles, Container, Typography } from "@material-ui/core"
 import LazyHero from "react-lazy-hero"
 
-const Hero = ({ title, subtitle, imageSrc, id = null }) => {
+const Hero = ({ title, subtitle = null, imageSrc, id = null }) => {
   const classes = makeStyles(theme => ({
     typo: {
       color: "white",
@@ -31,9 +31,11 @@ const Hero = ({ title, subtitle, imageSrc, id = null }) => {
           <Typography variant="h3" className={classes.typo}>
             {title}
           </Typography>
-          <Typography variant="body1" className={classes.typo}>
-            {subtitle}
-          </Typography>
+          {subtitle &&
+            <Typography variant="body1" className={classes.typo}>
+              {subtitle}
+            </Typography>
+          }
         </Container>
       </LazyHero>
     </>

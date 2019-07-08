@@ -11,7 +11,8 @@ import {
   useMediaQuery,
   useTheme,
   Fab,
-  IconButton
+  IconButton,
+  Container,
 } from "@material-ui/core"
 import "typeface-roboto"
 import Phone from "@material-ui/icons/Phone"
@@ -108,7 +109,13 @@ const Layout = ({ title = "", children }) => {
               borderBottom: "1px solid #222",
             }}
           >
-            <Toolbar variant="dense">
+            <Container
+              style={{
+                minHeight: "64px",
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
               <Grid
                 container
                 justify="space-between"
@@ -143,13 +150,26 @@ const Layout = ({ title = "", children }) => {
                   />
                 </Grid>
               </Grid>
-            </Toolbar>
+            </Container>
           </Grid>
           <Grid item>
-            <Toolbar style={{ minHeight: '64px' }}>
+            <Container
+              style={{
+                minHeight: "64px",
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
               <Grid container justify="space-between" alignItems="center">
                 <Grid item>
-                  <Typography variant="h5" noWrap>
+                  <Typography
+                    variant="h5"
+                    noWrap
+                    style={{
+                      borderLeft: "2px solid white",
+                      paddingLeft: "4px",
+                    }}
+                  >
                     <a
                       className={classes.a}
                       href="#"
@@ -164,27 +184,50 @@ const Layout = ({ title = "", children }) => {
                 </Grid>
                 <Grid item>
                   {!phone && (
-                    <ScrollSpy ids={["onas", "sluzby", "referencie", "kontakt"]}>
+                    <ScrollSpy
+                      ids={["onas", "sluzby", "referencie", "kontakt"]}
+                    >
                       {ids => (
                         <>
                           <Nav name="Hore" active={ids.top} />
                           <Nav name="O nás" anchor="onas" active={ids.onas} />
-                          <Nav name="Služby" anchor="sluzby" active={ids.sluzby} />
-                          <Nav name="Referencie" anchor="referencie" active={ids.referencie} />
-                          <Nav name="Kontakt" anchor="kontakt" active={ids.kontakt} />
+                          <Nav
+                            name="Služby"
+                            anchor="sluzby"
+                            active={ids.sluzby}
+                          />
+                          <Nav
+                            name="Referencie"
+                            anchor="referencie"
+                            active={ids.referencie}
+                          />
+                          <Nav
+                            name="Kontakt"
+                            anchor="kontakt"
+                            active={ids.kontakt}
+                          />
                         </>
                       )}
                     </ScrollSpy>
                   )}
                   {phone && (
                     <>
-                    {false && <Fab size="small" style={{ backgroundColor: '#EC5538' }}><Menu /></Fab>}
-                    <IconButton size="small"><Menu style={{ color: "#EC5538" }} /></IconButton>
+                      {false && (
+                        <Fab
+                          size="small"
+                          style={{ backgroundColor: "#EC5538" }}
+                        >
+                          <Menu />
+                        </Fab>
+                      )}
+                      <IconButton size="small">
+                        <Menu style={{ color: "#EC5538" }} />
+                      </IconButton>
                     </>
                   )}
                 </Grid>
               </Grid>
-            </Toolbar>
+            </Container>
           </Grid>
         </Grid>
       </AppBar>

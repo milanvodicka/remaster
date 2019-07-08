@@ -17,6 +17,7 @@ const Portfolio = ({ titles }) => {
     },
     typo: {
       color: "white",
+      textAlign: "center",
     },
     tile: {
       height: 375,

@@ -5,7 +5,7 @@ export const idsInViewport = ids => {
   const inViewport = (offset) => offset <= window.pageYOffset + 130
 
   const offsets = ids
-    .map(id => [id, document.getElementById(id).offsetTop])
+    .map(id => [id, document.getElementById(id) ? document.getElementById(id).offsetTop : Infinity])
     .sort(([, offsetA], [, offsetB]) => offsetB - offsetA)
 
   return [...offsets, ['top', 0]]

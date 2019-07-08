@@ -1,15 +1,21 @@
 import React, { useEffect } from "react"
 import HtmlHeader from "./HtmlHeader"
 import {
+  CssBaseline,
   AppBar,
   Toolbar,
   Typography,
   Button,
   makeStyles,
   Grid,
+  useMediaQuery,
+  useTheme,
+  Fab,
+  IconButton
 } from "@material-ui/core"
 import "typeface-roboto"
 import Phone from "@material-ui/icons/Phone"
+import Menu from "@material-ui/icons/Menu"
 import SmoothScroll from "smooth-scroll"
 import { navigate } from "@reach/router"
 import { SocialIcon } from "react-social-icons"
@@ -38,10 +44,7 @@ const useStyles = makeStyles(theme => ({
     textDecoration: "none",
   },
   container: {
-    paddingTop: "105px",
-    "@media (min-width: 600px)": {
-      paddingTop: "113px",
-    },
+    paddingTop: "113px",
   },
   socialIcon: {
     height: "25px !important",
@@ -88,11 +91,14 @@ const Layout = ({ title = "", children }) => {
     }
   }, [window.location.hash])
   const classes = useStyles()
+  const theme = useTheme()
+  const phone = !useMediaQuery(theme.breakpoints.up("sm"))
   const Nav = navigation(classes)
 
   return (
     <>
       <HtmlHeader title={title} />
+      <CssBaseline />
       <AppBar style={{ backgroundColor: "#151515" }}>
         <Grid container direction="column">
           <Grid
@@ -140,8 +146,8 @@ const Layout = ({ title = "", children }) => {
             </Toolbar>
           </Grid>
           <Grid item>
-            <Toolbar>
-              <Grid container justify="space-between">
+            <Toolbar style={{ minHeight: '64px' }}>
+              <Grid container justify="space-between" alignItems="center">
                 <Grid item>
                   <Typography variant="h5" noWrap>
                     <a
@@ -157,16 +163,25 @@ const Layout = ({ title = "", children }) => {
                   </Typography>
                 </Grid>
                 <Grid item>
-                  <ScrollSpy ids={["foo", "bar", "baz"]}>
-                    {ids => (
-                      <>
-                        <Nav name="Home" active={ids.top} />
-                        <Nav name="Foo" anchor="foo" active={ids.foo} />
-                        <Nav name="Bar" anchor="bar" active={ids.bar} />
-                        <Nav name="Baz" anchor="baz" active={ids.baz} />
-                      </>
-                    )}
-                  </ScrollSpy>
+                  {!phone && (
+                    <ScrollSpy ids={["onas", "sluzby", "referencie", "kontakt"]}>
+                      {ids => (
+                        <>
+                          <Nav name="Hore" active={ids.top} />
+                          <Nav name="O nás" anchor="onas" active={ids.onas} />
+                          <Nav name="Služby" anchor="sluzby" active={ids.sluzby} />
+                          <Nav name="Referencie" anchor="referencie" active={ids.referencie} />
+                          <Nav name="Kontakt" anchor="kontakt" active={ids.kontakt} />
+                        </>
+                      )}
+                    </ScrollSpy>
+                  )}
+                  {phone && (
+                    <>
+                    {false && <Fab size="small" style={{ backgroundColor: '#EC5538' }}><Menu /></Fab>}
+                    <IconButton size="small"><Menu style={{ color: "#EC5538" }} /></IconButton>
+                    </>
+                  )}
                 </Grid>
               </Grid>
             </Toolbar>

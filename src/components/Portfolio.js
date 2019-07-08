@@ -2,7 +2,7 @@ import React from "react"
 import { Grid, Typography, makeStyles } from "@material-ui/core"
 
 const Portfolio = ({ titles }) => {
-  const classes = makeStyles((theme) => ({
+  const classes = makeStyles(theme => ({
     container: {
       marginTop: theme.spacing(5),
       marginBottom: theme.spacing(5),
@@ -30,8 +30,9 @@ const Portfolio = ({ titles }) => {
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
+      transition: "background 500ms",
       "&:hover": {
-        background: "rgba(0,0,0,0.6)", // transition
+        background: "rgba(0,0,0,0.6)",
       },
     },
   }))()

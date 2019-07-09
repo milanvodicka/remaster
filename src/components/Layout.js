@@ -185,12 +185,11 @@ const Layout = ({ title = "", children }) => {
                 <Grid item>
                   {!phone && (
                     <ScrollSpy
-                      ids={["onas", "sluzby", "referencie", "kontakt"]}
+                      ids={["sluzby", "referencie", "onas", "kontakt"]}
                     >
                       {ids => (
                         <>
                           <Nav name="Hore" active={ids.top} />
-                          <Nav name="O nás" anchor="onas" active={ids.onas} />
                           <Nav
                             name="Služby"
                             anchor="sluzby"
@@ -201,6 +200,7 @@ const Layout = ({ title = "", children }) => {
                             anchor="referencie"
                             active={ids.referencie}
                           />
+                          <Nav name="O nás" anchor="onas" active={ids.onas} />
                           <Nav
                             name="Kontakt"
                             anchor="kontakt"

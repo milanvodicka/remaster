@@ -1,8 +1,9 @@
 import React from "react"
-import { makeStyles, Container, Typography } from "@material-ui/core"
+import { makeStyles, Container, Typography, useTheme } from "@material-ui/core"
 import LazyHero from "react-lazy-hero"
 
 const Hero = ({ title, subtitle = null, imageSrc, id = null }) => {
+  const theme = useTheme()
   const classes = makeStyles(theme => ({
     typo: {
       color: "white",
@@ -22,17 +23,17 @@ const Hero = ({ title, subtitle = null, imageSrc, id = null }) => {
       <LazyHero
         imageSrc={imageSrc}
         color="black"
-        opacity={0.5}
-        minHeight="30vh"
+        opacity={0.4}
+        minHeight="60vh"
         parallaxOffset={30}
         className={classes.hero}
       >
         <Container style={{ textAlign: "left" }}>
-          <Typography variant="h3" className={classes.typo}>
+          <Typography variant="h2" className={classes.typo} style={{ fontWeight: 400, marginBottom: theme.spacing(4)}}>
             {title}
           </Typography>
           {subtitle &&
-            <Typography variant="body1" className={classes.typo}>
+            <Typography variant="h5" className={classes.typo}>
               {subtitle}
             </Typography>
           }

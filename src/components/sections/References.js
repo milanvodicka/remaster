@@ -1,20 +1,16 @@
 import React from "react"
 import { useTheme, Container } from "@material-ui/core"
-import Hero from "../Hero"
 import Portfolio from "../Portfolio"
+import SectionTitle from "../SectionTitle"
 
 const References = () => {
   const theme = useTheme()
   return (
-    <>
-      <Hero
-        id="referencie"
-        title="Referencie"
-        imageSrc="https://unsplash.it/2000/1000"
-      />
       <Container
+        id="referencie"
         style={{ marginTop: theme.spacing(4), marginBottom: theme.spacing(4) }}
       >
+        <SectionTitle>Referencie</SectionTitle>
         <Portfolio
           titles={[
             "Byt Eurovea",
@@ -26,7 +22,6 @@ const References = () => {
           ]}
         />
       </Container>
-    </>
   )
 }
 

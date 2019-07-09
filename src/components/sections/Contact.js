@@ -1,6 +1,7 @@
 import React from "react"
 import { Container, useTheme, Typography, makeStyles } from "@material-ui/core"
 import Hero from "../Hero"
+import SectionTitle from "../SectionTitle"
 
 const Contact = () => {
   const classes = makeStyles({
@@ -13,15 +14,11 @@ const Contact = () => {
   })()
   const theme = useTheme()
   return (
-    <>
-      <Hero
-        id="kontakt"
-        title="Kontakt"
-        imageSrc="https://unsplash.it/2000/1000"
-      />
       <Container
+        id="kontakt"
         style={{ marginTop: theme.spacing(4), marginBottom: theme.spacing(50) }}
       >
+        <SectionTitle>Kontakt</SectionTitle>
         <Typography variant="h6">AV Integra servis, s.r.o</Typography>
         <Typography variant="body1">
           Pluhová 40/A<br/>
@@ -31,7 +28,6 @@ const Contact = () => {
           Email: <a className={classes.a} href="mailto:vodicka@remaster.sk">vodicka@remaster.sk</a><br/>
         </Typography>
       </Container>
-    </>
   )
 }
 

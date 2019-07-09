@@ -1,9 +1,8 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import HtmlHeader from "./HtmlHeader"
 import {
   CssBaseline,
   AppBar,
-  Toolbar,
   Typography,
   Button,
   makeStyles,
@@ -13,49 +12,53 @@ import {
   Fab,
   IconButton,
   Container,
+  Menu,
+  MenuItem,
 } from "@material-ui/core"
 import "typeface-roboto"
-import Phone from "@material-ui/icons/Phone"
-import Menu from "@material-ui/icons/Menu"
+import PhoneIcon from "@material-ui/icons/Phone"
+import MenuIcon from "@material-ui/icons/Menu"
 import SmoothScroll from "smooth-scroll"
 import { navigate } from "@reach/router"
 import { SocialIcon } from "react-social-icons"
 import ScrollSpy from "./ScrollSpy"
 
-const buttonStyles = theme => ({
-  fontWeight: "normal",
-  textTransform: "none",
-  color: "#FFFFFF",
-  backgroundColor: "#151515",
-  "&:hover": {
-    backgroundColor: "#EC5538",
-  },
-  marginRight: theme.spacing(0.5),
-  boxShadow: "none",
-})
-
-const useStyles = makeStyles(theme => ({
-  button: buttonStyles(theme),
-  buttonActive: {
-    ...buttonStyles(theme),
-    backgroundColor: "#EC5538",
-  },
-  a: {
+const useStyles = makeStyles(theme => {
+  const buttonStyles = theme => ({
+    fontWeight: "normal",
+    textTransform: "none",
     color: "#FFFFFF",
-    textDecoration: "none",
-  },
-  container: {
-    paddingTop: "113px",
-  },
-  socialIcon: {
-    height: "25px !important",
-    width: "25px !important",
-    marginLeft: theme.spacing(0.5),
-    "& .social-svg-mask:hover": {
-      fill: "rgb(236, 85, 56) !important",
+    backgroundColor: "#151515",
+    "&:hover": {
+      backgroundColor: "#EC5538",
     },
-  },
-}))
+    marginRight: theme.spacing(0.5),
+    boxShadow: "none",
+  })
+
+  return {
+    button: buttonStyles(theme),
+    buttonActive: {
+      ...buttonStyles(theme),
+      backgroundColor: "#EC5538",
+    },
+    a: {
+      color: "#FFFFFF",
+      textDecoration: "none",
+    },
+    container: {
+      paddingTop: "113px",
+    },
+    socialIcon: {
+      height: "25px !important",
+      width: "25px !important",
+      marginLeft: theme.spacing(0.5),
+      "& .social-svg-mask:hover": {
+        fill: "rgb(236, 85, 56) !important",
+      },
+    },
+  }
+})
 
 const scrollTo = (id = null) => {
   if (window) {
@@ -85,6 +88,19 @@ const navigation = classes => ({ name, anchor = null, active = false }) => (
   </a>
 )
 
+const phoneNavigation = closeMenu => ({ name, anchor = null }) => (
+  <MenuItem
+    onClick={() => {
+      const url = anchor ? `#${anchor}` : "/"
+      navigate(url)
+      scrollTo(anchor)
+      closeMenu()
+    }}
+  >
+    {name}
+  </MenuItem>
+)
+
 const Layout = ({ title = "", children }) => {
   useEffect(() => {
     if (window) {
@@ -94,7 +110,11 @@ const Layout = ({ title = "", children }) => {
   const classes = useStyles()
   const theme = useTheme()
   const phone = !useMediaQuery(theme.breakpoints.up("sm"))
+  const [menuEl, setMenuEl] = useState(null)
+  const openMenu = event => setMenuEl(event.currentTarget)
+  const closeMenu = () => setMenuEl(null)
   const Nav = navigation(classes)
+  const PhoneNav = phoneNavigation(closeMenu)
 
   return (
     <>
@@ -124,7 +144,7 @@ const Layout = ({ title = "", children }) => {
               >
                 <Grid item>
                   <Grid container direction="row" alignItems="center">
-                    <Phone fontSize="small" />
+                    <PhoneIcon fontSize="small" />
                     <Typography variant="body2">
                       <a
                         href="tel:+421907574291"
@@ -212,17 +232,22 @@ const Layout = ({ title = "", children }) => {
                   )}
                   {phone && (
                     <>
-                      {false && (
-                        <Fab
-                          size="small"
-                          style={{ backgroundColor: "#EC5538" }}
-                        >
-                          <Menu />
-                        </Fab>
-                      )}
-                      <IconButton size="small">
-                        <Menu style={{ color: "#EC5538" }} />
+                      <IconButton size="small" onClick={openMenu}>
+                        <MenuIcon style={{ color: "#EC5538" }} />
                       </IconButton>
+                      <Menu
+                        id="simple-menu"
+                        anchorEl={menuEl}
+                        keepMounted
+                        open={!!menuEl}
+                        onClose={closeMenu}
+                      >
+                        <PhoneNav name="Hore" />
+                        <PhoneNav name="Služby" anchor="sluzby" />
+                        <PhoneNav name="Referencie" anchor="referencie" />
+                        <PhoneNav name="O nás" anchor="onas" />
+                        <PhoneNav name="Kontakt" anchor="kontakt" />
+                      </Menu>
                     </>
                   )}
                 </Grid>

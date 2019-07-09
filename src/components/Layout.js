@@ -9,7 +9,6 @@ import {
   Grid,
   useMediaQuery,
   useTheme,
-  Fab,
   IconButton,
   Container,
   Menu,
@@ -18,7 +17,6 @@ import {
 import "typeface-roboto"
 import PhoneIcon from "@material-ui/icons/Phone"
 import MenuIcon from "@material-ui/icons/Menu"
-import SmoothScroll from "smooth-scroll"
 import { navigate } from "@reach/router"
 import { SocialIcon } from "react-social-icons"
 import ScrollSpy from "./ScrollSpy"
@@ -62,6 +60,7 @@ const useStyles = makeStyles(theme => {
 
 const scrollTo = (id = null) => {
   if (window) {
+    const SmoothScroll = require("smooth-scroll")
     const e = id && document.querySelector(`#${id}`)
     const scroll = new SmoothScroll()
     if (e) {
@@ -102,11 +101,12 @@ const phoneNavigation = closeMenu => ({ name, anchor = null }) => (
 )
 
 const Layout = ({ title = "", children }) => {
+  const locationHash = typeof window === "undefined" ? null : window.location.hash
   useEffect(() => {
     if (window) {
       scrollTo(window.location.hash.substring(1))
     }
-  }, [window.location.hash])
+  }, [locationHash])
   const classes = useStyles()
   const theme = useTheme()
   const phone = !useMediaQuery(theme.breakpoints.up("sm"))

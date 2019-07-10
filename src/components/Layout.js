@@ -60,13 +60,20 @@ const useStyles = makeStyles(theme => {
 
 const scrollTo = (id = null) => {
   if (window) {
-    const SmoothScroll = require("smooth-scroll")
+    console.log("scrollTo", id)
+    if (!window.sscroll) {
+      console.log('creating smooth scroll instance')
+      const SmoothScroll = require("smooth-scroll")
+      window.sscroll = new SmoothScroll()
+    }
+    const { sscroll } = window
     const e = id && document.querySelector(`#${id}`)
-    const scroll = new SmoothScroll()
+    sscroll.cancelScroll()
     if (e) {
-      scroll.animateScroll(e.offsetTop - 130)
+      console.log("scrolling to: ", e.offsetTop - 130)
+      sscroll.animateScroll(e.offsetTop - 130)
     } else {
-      scroll.animateScroll(0)
+      sscroll.animateScroll(0)
     }
   }
 }
@@ -101,12 +108,12 @@ const phoneNavigation = closeMenu => ({ name, anchor = null }) => (
 )
 
 const Layout = ({ title = "", children }) => {
-  const locationHash = typeof window === "undefined" ? null : window.location.hash
+  console.log("render")
   useEffect(() => {
-    if (window) {
-      scrollTo(locationHash.substring(1))
+    if (window && window.location.hash) {
+      setTimeout(() => scrollTo(window.location.hash.substring(1)), 750)
     }
-  }, [locationHash])
+  }, [])
   const classes = useStyles()
   const theme = useTheme()
   const phone = !useMediaQuery(theme.breakpoints.up("sm"))

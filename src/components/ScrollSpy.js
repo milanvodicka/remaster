@@ -10,7 +10,11 @@ const ScrollSpy = ({ ids, children }) => {
     if (window) {
       window.addEventListener(
         "scroll",
-        debounce(() => set(idsInViewport(ids)), 50)
+        debounce(() => {
+          const whatsInViewport = idsInViewport(ids)
+          console.log('ScrollSpy useEffect', whatsInViewport)
+          set(whatsInViewport)
+        }, 100)
       )
     }
   }, [])

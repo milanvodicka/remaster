@@ -202,6 +202,7 @@ const Layout = ({ title = "", children }) => {
                       href="#"
                       onClick={e => {
                         navigate("/")
+                        scrollTo()
                         e.preventDefault()
                       }}
                     >

@@ -10,7 +10,7 @@ const ScrollSpy = ({ ids, children }) => {
     if (window) {
       window.addEventListener(
         "scroll",
-        debounce(() => set(idsInViewport(ids)), 200)
+        debounce(() => set(idsInViewport(ids)), 50)
       )
     }
   }, [])

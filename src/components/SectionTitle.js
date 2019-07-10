@@ -8,7 +8,7 @@ const SectionTitle = ({ children, style = {} }) => {
       variant="h3"
       style={{
         fontWeight: 300,
-        marginTop: theme.spacing(12),
+        paddingTop: theme.spacing(6),
         marginBottom: theme.spacing(6),
         ...style,
       }}

@@ -104,7 +104,7 @@ const Layout = ({ title = "", children }) => {
   const locationHash = typeof window === "undefined" ? null : window.location.hash
   useEffect(() => {
     if (window) {
-      scrollTo(window.location.hash.substring(1))
+      scrollTo(locationHash.substring(1))
     }
   }, [locationHash])
   const classes = useStyles()

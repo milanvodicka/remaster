@@ -16,7 +16,7 @@ const Contact = () => {
   return (
       <Container
         id="kontakt"
-        style={{ marginTop: theme.spacing(4), marginBottom: theme.spacing(50) }}
+        style={{ marginTop: theme.spacing(4), marginBottom: theme.spacing(4) }}
       >
         <SectionTitle>Kontakt</SectionTitle>
         <Typography variant="h6">AV Integra servis, s.r.o</Typography>

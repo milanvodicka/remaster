@@ -2,7 +2,9 @@ export const idsInViewport = ids => {
   if (!window)
     return ids.reduce((acc, id) => ({ [id]: false, ...acc }), { top: true })
 
-  const inViewport = (offset) => offset <= window.pageYOffset + 130
+  const DEFAULT_OFFSET = 130
+
+  const inViewport = (offset) => offset <= window.pageYOffset + DEFAULT_OFFSET
 
   const offsets = ids
     .map(id => [id, document.getElementById(id) ? document.getElementById(id).offsetTop : Infinity])

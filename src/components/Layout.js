@@ -62,7 +62,7 @@ const scrollTo = (id = null) => {
   if (window) {
     console.log("scrollTo", id)
     if (!window.sscroll) {
-      console.log('creating smooth scroll instance')
+      console.log("creating smooth scroll instance")
       const SmoothScroll = require("smooth-scroll")
       window.sscroll = new SmoothScroll()
     }
@@ -212,31 +212,13 @@ const Layout = ({ title = "", children }) => {
                 </Grid>
                 <Grid item>
                   {!phone && (
-                    <ScrollSpy
-                      ids={["sluzby", "referencie", "onas", "kontakt"]}
-                    >
-                      {ids => (
-                        <>
-                          <Nav name="Hore" active={ids.top} />
-                          <Nav
-                            name="Služby"
-                            anchor="sluzby"
-                            active={ids.sluzby}
-                          />
-                          <Nav
-                            name="Referencie"
-                            anchor="referencie"
-                            active={ids.referencie}
-                          />
-                          <Nav name="O nás" anchor="onas" active={ids.onas} />
-                          <Nav
-                            name="Kontakt"
-                            anchor="kontakt"
-                            active={ids.kontakt}
-                          />
-                        </>
-                      )}
-                    </ScrollSpy>
+                    <>
+                      <Nav name="Hore" />
+                      <Nav name="Služby" anchor="sluzby" />
+                      <Nav name="Referencie" anchor="referencie" />
+                      <Nav name="O nás" anchor="onas" />
+                      <Nav name="Kontakt" anchor="kontakt" />
+                    </>
                   )}
                   {phone && (
                     <>

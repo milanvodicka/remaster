@@ -80,7 +80,7 @@ const navigation = classes => ({ name, anchor = null, active = false }) => (
       variant="contained"
       className={active ? classes.buttonActive : classes.button}
       onClick={() => {
-        const url = anchor ? `#${anchor}` : "/"
+        const url = anchor ? `/#${anchor}` : "/"
         navigate(url)
         scrollTo(anchor)
       }}
@@ -91,7 +91,7 @@ const navigation = classes => ({ name, anchor = null, active = false }) => (
 )
 
 const phoneNavClick = (closeMenu, anchor = null) => () => {
-  const url = anchor ? `#${anchor}` : "/"
+  const url = anchor ? `/#${anchor}` : "/"
   navigate(url)
   scrollTo(anchor)
   closeMenu()
@@ -101,6 +101,8 @@ const Layout = ({ title = "", children }) => {
   useEffect(() => {
     if (window && window.location.hash) {
       setTimeout(() => scrollTo(window.location.hash.substring(1)), 750)
+    } else {
+      scrollTo()
     }
   }, [])
   const classes = useStyles()
@@ -201,7 +203,7 @@ const Layout = ({ title = "", children }) => {
                 <Grid item>
                   {!phone && (
                     <>
-                      <Nav name="Hore" />
+                      <Nav name="Domov" />
                       <Nav name="Služby" anchor="sluzby" />
                       <Nav name="Referencie" anchor="referencie" />
                       <Nav name="O nás" anchor="onas" />
@@ -220,7 +222,7 @@ const Layout = ({ title = "", children }) => {
                         open={!!menuEl}
                         onClose={closeMenu}
                       >
-                        <MenuItem onClick={phoneNavClick(closeMenu)}>Hore</MenuItem>
+                        <MenuItem onClick={phoneNavClick(closeMenu)}>Domov</MenuItem>
                         <MenuItem onClick={phoneNavClick(closeMenu, "sluzby")}>Služby</MenuItem>
                         <MenuItem onClick={phoneNavClick(closeMenu, "referencie")}>Referencie</MenuItem>
                         <MenuItem onClick={phoneNavClick(closeMenu, "onas")}>O nás</MenuItem>

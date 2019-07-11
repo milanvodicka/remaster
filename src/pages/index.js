@@ -13,6 +13,7 @@ const IndexPage = () => (
       title="Remaster"
       subtitle="Technológie pre modernú domácnosť alebo firmu."
       imageSrc={image}
+      fullScreen
     />
     <Services/>
     <References/>

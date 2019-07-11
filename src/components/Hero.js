@@ -2,7 +2,7 @@ import React from "react"
 import { makeStyles, Container, Typography, useTheme } from "@material-ui/core"
 import LazyHero from "react-lazy-hero"
 
-const Hero = ({ title, subtitle = null, imageSrc, id = null }) => {
+const Hero = ({ title, subtitle = null, imageSrc, id = null, fullScreen = false }) => {
   const theme = useTheme()
   const classes = makeStyles(theme => ({
     typo: {
@@ -24,7 +24,7 @@ const Hero = ({ title, subtitle = null, imageSrc, id = null }) => {
         imageSrc={imageSrc}
         color="black"
         opacity={0.3}
-        minHeight="calc(100vh - 128px)"
+        minHeight={ fullScreen ? "calc(100vh - 128px)" : "60vh" }
         parallaxOffset={150}
         className={classes.hero}
       >

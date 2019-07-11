@@ -12,7 +12,6 @@ const ScrollSpy = ({ ids, children }) => {
         "scroll",
         debounce(() => {
           const whatsInViewport = idsInViewport(ids)
-          console.log('ScrollSpy useEffect', whatsInViewport)
           set(whatsInViewport)
         }, 100)
       )

@@ -19,7 +19,6 @@ import PhoneIcon from "@material-ui/icons/Phone"
 import MenuIcon from "@material-ui/icons/Menu"
 import { navigate } from "@reach/router"
 import { SocialIcon } from "react-social-icons"
-import ScrollSpy from "./ScrollSpy"
 
 const useStyles = makeStyles(theme => {
   const buttonStyles = theme => ({
@@ -45,7 +44,7 @@ const useStyles = makeStyles(theme => {
       textDecoration: "none",
     },
     container: {
-      paddingTop: "113px",
+      paddingTop: "128px",
     },
     socialIcon: {
       height: "25px !important",
@@ -60,9 +59,7 @@ const useStyles = makeStyles(theme => {
 
 const scrollTo = (id = null) => {
   if (window) {
-    console.log("scrollTo", id)
     if (!window.sscroll) {
-      console.log("creating smooth scroll instance")
       const SmoothScroll = require("smooth-scroll")
       window.sscroll = new SmoothScroll()
     }
@@ -70,7 +67,6 @@ const scrollTo = (id = null) => {
     const e = id && document.querySelector(`#${id}`)
     sscroll.cancelScroll()
     if (e) {
-      console.log("scrolling to: ", e.offsetTop - 130)
       sscroll.animateScroll(e.offsetTop - 130)
     } else {
       sscroll.animateScroll(0)
@@ -94,21 +90,14 @@ const navigation = classes => ({ name, anchor = null, active = false }) => (
   </a>
 )
 
-const phoneNavigation = closeMenu => ({ name, anchor = null }) => (
-  <MenuItem
-    onClick={() => {
-      const url = anchor ? `#${anchor}` : "/"
-      navigate(url)
-      scrollTo(anchor)
-      closeMenu()
-    }}
-  >
-    {name}
-  </MenuItem>
-)
+const phoneNavClick = (closeMenu, anchor = null) => () => {
+  const url = anchor ? `#${anchor}` : "/"
+  navigate(url)
+  scrollTo(anchor)
+  closeMenu()
+}
 
 const Layout = ({ title = "", children }) => {
-  console.log("render")
   useEffect(() => {
     if (window && window.location.hash) {
       setTimeout(() => scrollTo(window.location.hash.substring(1)), 750)
@@ -121,7 +110,6 @@ const Layout = ({ title = "", children }) => {
   const openMenu = event => setMenuEl(event.currentTarget)
   const closeMenu = () => setMenuEl(null)
   const Nav = navigation(classes)
-  const PhoneNav = phoneNavigation(closeMenu)
 
   return (
     <>
@@ -232,11 +220,11 @@ const Layout = ({ title = "", children }) => {
                         open={!!menuEl}
                         onClose={closeMenu}
                       >
-                        <PhoneNav name="Hore" />
-                        <PhoneNav name="Služby" anchor="sluzby" />
-                        <PhoneNav name="Referencie" anchor="referencie" />
-                        <PhoneNav name="O nás" anchor="onas" />
-                        <PhoneNav name="Kontakt" anchor="kontakt" />
+                        <MenuItem onClick={phoneNavClick(closeMenu)}>Hore</MenuItem>
+                        <MenuItem onClick={phoneNavClick(closeMenu, "sluzby")}>Služby</MenuItem>
+                        <MenuItem onClick={phoneNavClick(closeMenu, "referencie")}>Referencie</MenuItem>
+                        <MenuItem onClick={phoneNavClick(closeMenu, "onas")}>O nás</MenuItem>
+                        <MenuItem onClick={phoneNavClick(closeMenu, "kontakt")}>Kontakt</MenuItem>
                       </Menu>
                     </>
                   )}

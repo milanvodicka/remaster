@@ -5,7 +5,7 @@ import Services from "../components/sections/Services"
 import References from "../components/sections/References"
 import Contact from "../components/sections/Contact"
 import Hero from "../components/Hero"
-import image from "../images/smart-home.jpg"
+import image from "../images/main.jpg"
 
 const IndexPage = () => (
   <Layout>

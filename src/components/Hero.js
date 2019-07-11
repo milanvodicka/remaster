@@ -9,7 +9,7 @@ const Hero = ({ title, subtitle = null, imageSrc, id = null }) => {
       color: "white",
       marginBottom: theme.spacing(1),
       textAlign: "left",
-      textShadow: "0 0 5px rgba(0,0,0,0.8)",
+      textShadow: "0px 4px 3px rgba(0,0,0,0.4), 0px 8px 13px rgba(0,0,0,0.1), 0px 18px 23px rgba(0,0,0,0.1)",
     },
     hero: {
       "& > div:nth-child(2) > div": {
@@ -23,9 +23,9 @@ const Hero = ({ title, subtitle = null, imageSrc, id = null }) => {
       <LazyHero
         imageSrc={imageSrc}
         color="black"
-        opacity={0.4}
-        minHeight="60vh"
-        parallaxOffset={30}
+        opacity={0.3}
+        minHeight="calc(100vh - 128px)"
+        parallaxOffset={150}
         className={classes.hero}
       >
         <Container style={{ textAlign: "left" }}>

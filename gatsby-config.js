@@ -5,6 +5,14 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /icons\/.*\.svg$/
+        }
+      }
+    },
+    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: "UA-142285450-1",

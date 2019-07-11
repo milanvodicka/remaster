@@ -18,7 +18,7 @@ const IndexPage = () => (
     <References/>
     <AboutUs/>
     <Contact/>
-    <div style={{ height: "10%"}}/>
+    <div style={{ height: "33vh"}}/>
   </Layout>
 )
 

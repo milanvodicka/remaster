@@ -10,7 +10,7 @@ import {
   makeStyles,
   List,
   ListItem,
-  ListItemText
+  ListItemText,
 } from "@material-ui/core"
 import mobileAppImage from "../images/smart-home/mobile-app.jpg"
 import tabletAppImage from "../images/smart-home/tablet-app.jpg"
@@ -18,9 +18,10 @@ import wirelessImage from "../images/smart-home/wireless.jpg"
 import homekit from "../images/smart-home/apple-homekit.png"
 import assistant from "../images/smart-home/google-assistant.png"
 import alexa from "../images/smart-home/amazon-alexa.png"
+import Transition from "../components/Transition"
 
 const Page = () => {
-  const classes = makeStyles({
+  const classes = makeStyles(theme => ({
     image: {
       display: "block",
       width: "80%",
@@ -34,7 +35,16 @@ const Page = () => {
       height: "60px",
       margin: "auto",
     },
-  })()
+    wide: {
+      backgroundColor: "rgba(0,0,0,0.03)",
+      marginTop: theme.spacing(9),
+      paddingTop: theme.spacing(5),
+      paddingBottom: theme.spacing(5),
+      maxWidth: "100%",
+      boxShadow: "inset 0 30px 20px -30px rgba(0,0,0,0.06)",
+      textShadow: "0 0 10px white",
+    },
+  }))()
   const theme = useTheme()
   return (
     <Layout>
@@ -57,11 +67,13 @@ const Page = () => {
             </Typography>
           </Grid>
           <Grid item sm={6}>
-            <img
-              className={classes.image}
-              src={wirelessImage}
-              alt="Bezdrôtová inteligentná domácnosť."
-            />
+            <Transition>
+              <img
+                className={classes.image}
+                src={wirelessImage}
+                alt="Bezdrôtová inteligentná domácnosť."
+              />
+            </Transition>
           </Grid>
         </Grid>
 
@@ -71,11 +83,13 @@ const Page = () => {
           style={{ paddingTop: theme.spacing(9) }}
         >
           <Grid item sm={6}>
-            <img
-              className={classes.image}
-              src={tabletAppImage}
-              alt="Ovládanie inteligentnej domácnosti z tabletu."
-            />
+            <Transition>
+              <img
+                className={classes.image}
+                src={tabletAppImage}
+                alt="Ovládanie inteligentnej domácnosti z tabletu."
+              />
+            </Transition>
           </Grid>
           <Grid item sm={6}>
             <Typography variant="body1">
@@ -89,14 +103,7 @@ const Page = () => {
         </Grid>
       </Container>
 
-      <Container
-        style={{
-          backgroundColor: "#E4E4E4",
-          marginTop: theme.spacing(9),
-          paddingTop: theme.spacing(4),
-          paddingBottom: theme.spacing(4),
-        }}
-      >
+      <Container className={classes.wide}>
         <Typography variant="h5" style={{ textAlign: "center" }}>
           Veľkou výhodou je absolútna flexibilita a sloboda, v prípade zmien,
           alebo rozšírenia systému o ďalšie prvky.
@@ -128,23 +135,18 @@ const Page = () => {
             </Typography>
           </Grid>
           <Grid item sm={6}>
-            <img
-              className={classes.image}
-              src={mobileAppImage}
-              alt="Mobilná aplikácia na ovládanie inteligentnej domácnosti."
-            />
+            <Transition onEnterViewport={() => console.log("foo")}>
+              <img
+                className={classes.image}
+                src={mobileAppImage}
+                alt="Mobilná aplikácia na ovládanie inteligentnej domácnosti."
+              />
+            </Transition>
           </Grid>
         </Grid>
       </Container>
 
-      <Container
-        style={{
-          backgroundColor: "#E4E4E4",
-          marginTop: theme.spacing(9),
-          paddingTop: theme.spacing(4),
-          paddingBottom: theme.spacing(4),
-        }}
-      >
+      <Container className={classes.wide}>
         <Typography variant="h5" style={{ textAlign: "center" }}>
           Pracujeme s
         </Typography>
@@ -154,25 +156,31 @@ const Page = () => {
           alignItems="center"
         >
           <Grid item sm={4}>
-            <img
-              className={classes.workswith}
-              src={homekit}
-              alt="Apple Homekit"
-            />
+            <Transition>
+              <img
+                className={classes.workswith}
+                src={homekit}
+                alt="Apple Homekit"
+              />
+            </Transition>
           </Grid>
           <Grid item sm={4}>
-            <img
-              className={classes.workswith}
-              src={assistant}
-              alt="Apple Homekit"
-            />
+            <Transition>
+              <img
+                className={classes.workswith}
+                src={assistant}
+                alt="Apple Homekit"
+              />
+            </Transition>
           </Grid>
           <Grid item sm={4}>
-            <img
-              className={classes.workswith}
-              src={alexa}
-              alt="Apple Homekit"
-            />
+            <Transition>
+              <img
+                className={classes.workswith}
+                src={alexa}
+                alt="Apple Homekit"
+              />
+            </Transition>
           </Grid>
         </Grid>
       </Container>

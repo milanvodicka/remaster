@@ -19,18 +19,23 @@ import Sound from "../../images/icons/ozvucenie.svg"
 import DigitalSignage from "../../images/icons/reklamne-displeje.svg"
 import SmartHome from "../../images/icons/smart-home.svg"
 import Multimedia from "../../images/icons/tv-multimedia.svg"
+import { navigate } from "gatsby"
 
-const ServiceItem = ({ title, text, Icon }) => {
+const ServiceItem = ({ title, text, Icon, onClick = null }) => {
   const classes = makeStyles(theme => ({
     paper: {
       padding: theme.spacing(3),
       height: "250px",
       display: "flex",
-      cursor: "pointer",
-      "&:hover": {
-        boxShadow:
-          "0px 5px 5px -3px rgba(0,0,0,0.2), 0px 8px 10px 1px rgba(0,0,0,0.14), 0px 3px 14px 2px rgba(0,0,0,0.12)",
-      },
+      ...(onClick
+        ? {
+            cursor: "pointer",
+            "&:hover": {
+              boxShadow:
+                "0px 5px 5px -3px rgba(0,0,0,0.2), 0px 8px 10px 1px rgba(0,0,0,0.14), 0px 3px 14px 2px rgba(0,0,0,0.12)",
+            },
+          }
+        : {}),
     },
     title: {
       textTransform: "uppercase",
@@ -57,7 +62,7 @@ const ServiceItem = ({ title, text, Icon }) => {
     },
   }))()
   return (
-    <Grid item sm={6} md={6} lg={4} className={classes.tile}>
+    <Grid item sm={6} md={6} lg={4} className={classes.tile} onClick={onClick}>
       <Paper className={classes.paper} elevation={2}>
         <Grid
           container
@@ -96,6 +101,7 @@ const Services = () => {
           title="Smart Home"
           text="Inteligentná domácnosť alebo firma. Ovládanie kúrenia, osvetlenia, závlahy, žalúzií a iné."
           Icon={SmartHome}
+          onClick={() => navigate("/smart-home")}
         />
         <ServiceItem
           title="Bezpečnosť"

@@ -13,11 +13,19 @@ const CarouselHeroContent = ({ content, interval }) => {
     return () => clearInterval(intervalRef)
   }, [])
   if (!content.length) throw new Error("Content cannot be empty!")
+  const {
+    title,
+    subtitle,
+    cta,
+    onClick
+  } = content[index.current];
   return (
     <Fade timeout={1000} appear in key={index.current}>
       <HeroContent
-        title={content[index.current].title}
-        subtitle={content[index.current].subtitle}
+        title={title}
+        subtitle={subtitle}
+        cta={cta}
+        onClick={onClick}
       />
     </Fade>
   )

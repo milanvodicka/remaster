@@ -6,6 +6,7 @@ import References from "../components/sections/References"
 import Contact from "../components/sections/Contact"
 import Hero from "../components/CarouselHero"
 import image from "../images/main.jpg"
+import { navigate } from "gatsby"
 
 const IndexPage = () => (
   <Layout>
@@ -18,10 +19,8 @@ const IndexPage = () => (
         {
           title: "Smart Home",
           subtitle: "Inteligentná domácnosť alebo firma.",
-        },
-        {
-          title: "Bezpečnosť",
-          subtitle: "Zabezpečovací a kamerový systém, kontrola požiaru a úniku vody.",
+          cta: "Viac",
+          onClick: () => navigate('/smart-home'),
         },
       ]}
       title="Remaster"

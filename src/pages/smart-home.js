@@ -1,24 +1,19 @@
 import React, { cloneElement } from "react"
 import Layout from "../components/Layout"
 import Hero from "../components/Hero"
-import image from "../images/smart-home.jpg"
-import {
-  Typography,
-  Container,
-  useTheme,
-  Grid,
-  makeStyles,
-  List,
-  ListItem,
-  ListItemText,
-} from "@material-ui/core"
-import mobileAppImage from "../images/smart-home/mobile-app.jpg"
-import tabletAppImage from "../images/smart-home/tablet-app.jpg"
-import wirelessImage from "../images/smart-home/wireless.jpg"
-import homekit from "../images/smart-home/apple-homekit.png"
-import assistant from "../images/smart-home/google-assistant.png"
-import alexa from "../images/smart-home/amazon-alexa.png"
+import { Typography, Container, useTheme, Grid, makeStyles} from "@material-ui/core"
 import Transition from "../components/Transition"
+import mainImage from "../images/smart-home.jpg"
+import iphoneImage from "../images/smart-home/iphone.jpg"
+import homeSecurity from "../images/smart-home/home-security.jpg"
+import homekit from "../images/smart-home/homekit.png"
+import fibaro from "../images/smart-home/fibaro.png"
+import homey from "../images/smart-home/homey.png"
+import smartApartment from "../images/smart-home/smart-apartment.jpg"
+import smartAssistans from "../images/smart-home/assistans.jpg"
+import homekitGears from "../images/smart-home/homekits-gear.png"
+import fibaroWide1 from "../images/smart-home/fibaro-wide-1.png"
+import fibaroWide2 from "../images/smart-home/fibaro-wide-2.png"
 
 const TopSpace = ({ children, margin = false }) => {
   const theme = useTheme()
@@ -31,7 +26,7 @@ const TopSpace = ({ children, margin = false }) => {
   })
 }
 
-const SideBySide = ({ reverse = false, children, image, alt, style = {} }) => {
+const Image = ({ image, alt }) => {
   const classes = makeStyles(theme => ({
     image: {
       display: "block",
@@ -39,231 +34,174 @@ const SideBySide = ({ reverse = false, children, image, alt, style = {} }) => {
       height: "auto",
       margin: "auto",
       borderRadius: "5px",
-    }
-  }))();
+    },
+  }))()
 
-  const Text = () =>
+  return (
+    <Transition>
+      <img className={classes.image} src={image} alt={alt} />
+    </Transition>
+  )
+}
+
+const SideBySide = ({ reverse = false, children, image, alt, style = {} }) => {
+  const classes = makeStyles(theme => ({
+    imageGrid: {
+      [theme.breakpoints.only("xs")]: {
+        ...(reverse ? { marginBottom: theme.spacing(3) } : { marginTop: theme.spacing(3) }),
+      },
+    },
+  }))()
+
+  const Text = () => (
     <Grid item sm={6}>
-      <Typography variant="body1">{children}</Typography>
+      {children}
     </Grid>
+  )
 
-  const Image = () =>
-    <Grid item sm={6}>
-      <Transition>
-        <img
-          className={classes.image}
-          src={image}
-          alt={alt}
-        />
-      </Transition>
+  const GridImage = () => (
+    <Grid item sm={6} className={classes.imageGrid}>
+      <Image image={image} alt={alt} />
     </Grid>
+  )
 
-    return (!reverse
-      ? <Grid container alignItems="center" style={style}><Text/><Image/></Grid>
-      : <Grid container alignItems="center" style={style}><Image/><Text/></Grid>
-    );
+  return !reverse ? (
+    <Grid container alignItems="center" style={style}>
+      <Text />
+      <GridImage />
+    </Grid>
+  ) : (
+    <Grid container alignItems="center" style={style}>
+      <GridImage />
+      <Text />
+    </Grid>
+  )
 }
 
 const WideImage = ({ image, alt, style = {} }) => {
   const classes = makeStyles({
     wide: {
-      maxWidth: '100%',
+      maxWidth: "100%",
       padding: 0,
     },
     image: {
-      width: '100%',
-    }
-  })();
+      width: "100%",
+    },
+  })()
   return (
     <Container className={classes.wide} style={style}>
       <Transition>
-        <img
-          className={classes.image}
-          src={image}
-          alt={alt}
-        />
+        <img className={classes.image} src={image} alt={alt} />
       </Transition>
     </Container>
   )
 }
 
-const Page = () => {
-  const classes = makeStyles(theme => ({
-    workswith: {
-      display: "block",
-      width: "auto",
-      height: "60px",
-      margin: "auto",
-    },
-    wide: {
-      backgroundColor: "rgba(0,0,0,0.03)",
-      marginTop: theme.spacing(9),
-      paddingTop: theme.spacing(5),
-      paddingBottom: theme.spacing(5),
-      maxWidth: "100%",
-      boxShadow: "inset 0 30px 20px -30px rgba(0,0,0,0.06)",
-      textShadow: "0 0 10px white",
-    },
-  }))()
-  const theme = useTheme()
-  return (
-    <Layout>
-      <Hero
-        title="Smart Home"
-        subtitle="Inteligentná domácnosť"
-        imageSrc={image}
-      />
-      <Container>
-        <TopSpace>
-          <SideBySide image={wirelessImage} alt="Bezdrôtová inteligentná domácnosť.">
-            V dnešnej dobe sme svedkami vzrušujúcich zmien v oblasti
-            domácností a s nimi spojenými technológiami. Všetci sme si zvykli
-            používať smartphone pri každodenných činnostiach a vyhladávaní
-            informácii z celého sveta. Rovnaký trend pozorujeme aj pri
-            ovládaní súčastí bežnej domácnosti, akou sú kúrenie, svetlá,
-            žalúzie, rolety, závlaha, ale aj zabezpečovací, či kamerový
-            systém.
-          </SideBySide>
-        </TopSpace>
-        <TopSpace>
-          <SideBySide reverse image={tabletAppImage} alt="Ovládanie inteligentnej domácnosti z tabletu.">
-            V minulosti bolo veľmi nákladné spojiť tieto oblasti do jedného
-            združeného ovládania. Išlo o rozsiahle systémy, ktoré si
-            vyžadovali dôslednú káblovú predprípravu a náročný návrh. Ku
-            takýmto systémom zákazníci potrebovali spravidla servisnú
-            starostlivosť a každá zmena si vyžadovala zásah programátora.
-          </SideBySide>
-        </TopSpace>
-      </Container>
+const Bold = ({ children }) => <span style={{ fontWeight: "bold" }}>{children}</span>
 
+const Page = () => (
+  <Layout>
+    <Hero title="Smart Home" subtitle="Inteligentná domácnosť" imageSrc={mainImage} />
+    <Container>
       <TopSpace>
-        <WideImage image={mobileAppImage} alt="Wide"/>
+        <SideBySide image={iphoneImage} alt="Bezdrôtová inteligentná domácnosť.">
+          <Typography variant="h4" paragraph>
+            Kto dnes môže mať inteligentnú domácnosť
+          </Typography>
+          <Typography variant="body1" paragraph>
+            Inteligentná domácnosť sa vie v prvom rade prispôsobiť Vašim požiadavkám, a preto je možné ju <Bold>vytvoriť aj na existujúcej, pôvodnej elektroinštalácií</Bold>.
+          </Typography>
+          <Typography variant="body1">
+            Vie fungovať bez nutnosti káblovej predprípravy, a to vďaka najnovším <Bold>bezdrotovým technológiám, akou je napr. Z-WAVE, Zigbee</Bold>, alebo <Bold>Wifi</Bold>,
+            ktoré používame aj pri našich inštaláciách a <Bold>systémoch FIBARO, Homey, alebo Apple Homekit</Bold>.
+          </Typography>
+        </SideBySide>
       </TopSpace>
 
-      <Container>
-        <TopSpace>
-          <SideBySide image={mobileAppImage} alt="Mobilná aplikácia na ovládanie inteligentnej domácnosti.">
-            Dnes sú možnosti naklonené širokej verejnosti. Či už sa jedná o
-            malý byt s ovládaním radiatorových hlavíc, svietidiel a
-            audio-video zariadení, alebo rodinný dom s kompletnou
-            inteligenciou, ktorý vie presne čo má kedy urobiť, aj bez Vášho
-            zásahu. Navyše nie je potrebná rozsiahla predpríprava ani ťahanie
-            kabeláže a je možné systém nasadiť aj na pôvodnú
-            elektroinštaláciu. Umožńujú nám to moderné bezdrôtové technológie
-            ako je Z-WAVE, Wi-Fi, ZigBee a iné. Navyše ovládanie je čím ďalej
-            tým jednoduchšie, a to pomocou smarthone, tabletu, alebo hlasového
-            ovládania Alexa, Google Assistant a Siri.
-          </SideBySide>
-        </TopSpace>
-      </Container>
+      <TopSpace>
+        <SideBySide reverse image={homeSecurity} alt="Bezpečnosť">
+          <Typography variant="body1" paragraph>
+            Spočiatku môže obsahovať iba niekoľko základných funkcií a časom sa vie rozrastať o množstvo zariadení a inteligentných schopností.
+            <Bold>Cenou sa Vám prispôsobí</Bold>.
+          </Typography>
+          <Typography variant="body1">
+            Ak máte malý byt, alebo veľký dom, ak staviate, alebo už máte staršiu stavbu a chcete <Bold>jednoduché a intuitívne ovládanie</Bold> aj pre technicky menej zdatných
+            užívateľov, potom aj Vy dnes môžete vlastniť inteligentnú domácnosť.
+          </Typography>
+          <Grid container alignItems="center">
+            <Grid item xs={4}>
+              <Image image={homekit} alt="Homekit" />
+            </Grid>
+            <Grid item xs={4}>
+              <Image image={fibaro} alt="Fibaro" />
+            </Grid>
+            <Grid item xs={4}>
+              <Image image={homey} alt="Homey" />
+            </Grid>
+          </Grid>
+        </SideBySide>
+      </TopSpace>
+    </Container>
 
-      <Container className={classes.wide}>
-        <Typography variant="h5" style={{ textAlign: "center" }}>
-          Pracujeme s
-        </Typography>
-        <Grid
-          container
-          style={{ marginTop: theme.spacing(4) }}
-          alignItems="center"
-        >
-          <Grid item sm={4}>
-            <Transition>
-              <img
-                className={classes.workswith}
-                src={homekit}
-                alt="Apple Homekit"
-              />
-            </Transition>
-          </Grid>
-          <Grid item sm={4}>
-            <Transition>
-              <img
-                className={classes.workswith}
-                src={assistant}
-                alt="Apple Homekit"
-              />
-            </Transition>
-          </Grid>
-          <Grid item sm={4}>
-            <Transition>
-              <img
-                className={classes.workswith}
-                src={alexa}
-                alt="Apple Homekit"
-              />
-            </Transition>
-          </Grid>
-        </Grid>
-      </Container>
+    <TopSpace>
+      <WideImage image={smartApartment} alt="Smart apartment" />
+    </TopSpace>
 
-      <Container style={{ marginTop: theme.spacing(9) }}>
-        <Grid container>
-          <Grid item sm={12}>
-            <Typography variant="h6" style={{ marginBottom: theme.spacing(2) }}>
-              Niektoré z možností inteligentnej domácnosti:
-            </Typography>
-          </Grid>
-          <Grid item sm={6}>
-            <List>
-              <ListItem>
-                <ListItemText primary="Ovládanie kúrenia" />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary="Ovládanie svetiel" />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary="Ovládanie žalúzií a roliet" />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary="Ovládanie zavlažovania" />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary="Ovládanie TV a audio zariadení" />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary="Ovládanie zabezpečovacieho systému a kamier" />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary="Videovrátnik a otváranie brány" />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary="Automatizované scény osvetlenia a zatemnenia podľa denného režimu" />
-              </ListItem>
-            </List>
-          </Grid>
-          <Grid item sm={6}>
-            <List>
-              <ListItem>
-                <ListItemText primary="Meranie spotreby el. energie" />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary="Meranie teploty, vlhkosti a kvality ovzdušia" />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary="Ovládanie podľa počasia z vlastnej meteostanice alebo z internetu" />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary="Uzatvorenie prívodu vody v prípade detekcie záplavovým senzorom" />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary="Detekcia dymu a požiaru" />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary="Hlasové ovládanie Alexa, Google Assistant, Siri" />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary="Simulácia prítomnosti a dovolenkový režim" />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary="Budík so zapnutím ozvučenia v celom dome" />
-              </ListItem>
-            </List>
-          </Grid>
-        </Grid>
-      </Container>
-      <div style={{ height: "33vh" }} />
-    </Layout>
-  )
-}
+    <Container>
+      <TopSpace>
+        <SideBySide image={homekitGears} alt="Homepod a homekit zariadenia">
+          <Typography variant="h4">Čo dnes dokáže inteligentná domácnosť</Typography>
+          <Typography variant="body1" component="div">
+            <ul>
+              <li>
+                ochraňuje Vás a Váš majetok, <Bold>prebudí Vás v prípade detekcie dymu</Bold>, alebo požiaru
+              </li>
+              <li>
+                <Bold>zabráni vytopeniu</Bold> uzatvorením prívodu vody
+              </li>
+              <li>upozorní na prítomnosť cudzej osoby v priestore</li>
+              <li>
+                umožní Vám <Bold>náhľad prostredníctvom kamier</Bold> a vizuálnu kontrolu diania v domácnosti,
+              </li>
+              <li>zavolá Vám kamkoľvek na svete a umožní rozhovor s osobou stojacou pred Vašim videovrátnikom</li>
+              <li>
+                ovláda Vaše <Bold>kúrenie a klimatizáciu</Bold> podľa požadovaných podmienok, a to s ohľadom na aktuálne počasie, časť dňa, alebo prítomnosť osôb v dome
+              </li>
+              <li>
+                dokáže ovládať Vaše <Bold>svetlá, žalúzie a rolety</Bold> a nastaviť ich podľa vonkajších podmienok, alebo podľa činnosti, ktorú sa práve chystáte vykonávať
+              </li>
+              <li>
+                sprevádza Vás počas noci zapínaním svietidiel podľa pohybu a cez deň upraví ich intenzitu <Bold>pre maximálnu úsporu a komfort zároveň</Bold>
+              </li>
+            </ul>
+          </Typography>
+        </SideBySide>
+      </TopSpace>
+      <TopSpace>
+        <SideBySide reverse image={smartAssistans} alt="Alexa, Siri a Google Assistant">
+          <Typography variant="body1" component="div">
+            <ul>
+              <li>kontroluje <Bold>kvalitu ovzdušia, teplotu a vlhkosť</Bold> v danej miestnosti, a podľa podmienok nastaví vzduchotechniku alebo pošle upozornenie</li>
+              <li>
+                spojí všetky <Bold>audio-video zariadenia, domáce kino, TV, projektor, Apple TV, receiver</Bold> a ďalšie komponenty do jedného združeného ovládania. Zároveň vie nastaviť
+                svetelnú scénu podľa toho či práve počúvate hudbu, sledujete správy, alebo pozeráte film
+              </li>
+              <li>
+                inteligentná domácnosť bude stále múdrejšia a už dnes umožňuje <Bold>riadenie a ovládanie tisícov zariadení</Bold> a rôznych el. spotrebičov ako je kávovar, práčka alebo
+                umývačka riadu
+              </li>
+              <li>všetky zariadenia a ich parametre môžete kedykoľvek riadiť podľa aktuálnej potreby, a to aj z Vášho <Bold>smartphone, tabletu, alebo pomocou hlasového ovládania</Bold></li>
+            </ul>
+          </Typography>
+        </SideBySide>
+      </TopSpace>
+      <Grid container>
+        <TopSpace><Grid item xs={12}><Image image={fibaroWide1} alt="Fibaro smart home"/></Grid></TopSpace>
+        <TopSpace><Grid item xs={12}><Image image={fibaroWide2} alt="Fibaro smart home"/></Grid></TopSpace>
+      </Grid>
+    </Container>
+    <div style={{ height: "33vh" }} />
+  </Layout>
+)
 
 export default Page

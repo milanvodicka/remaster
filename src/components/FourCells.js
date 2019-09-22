@@ -17,8 +17,8 @@ const FourCells = ({ cells }) => {
   }))()
   return (
     <Grid container>
-      {cells.map(cell => (
-        <Grid item md={3} className={classes.gridItem}>
+      {cells.map((cell, key) => (
+        <Grid key={key} item md={3} className={classes.gridItem}>
           <div className={classes.gridItemInner}>
             <Typography variant="body1">{cell}</Typography>
           </div>

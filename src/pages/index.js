@@ -7,6 +7,7 @@ import Contact from "../components/sections/Contact"
 import Hero from "../components/CarouselHero"
 import image from "../images/main.jpg"
 import { navigate } from "gatsby"
+import ServicePage from "../components/ServicePage"
 
 const IndexPage = () => (
   <Layout>
@@ -27,6 +28,12 @@ const IndexPage = () => (
           subtitle: "Inteligentná domácnosť alebo firma.",
           cta: "Viac",
           onClick: () => navigate("/smart-home"),
+        },
+        {
+          title: "Bezpečnosť Vašej domácnosti",
+          subtitle: "Zabezpečovací a kamerový systém",
+          cta: "Viac",
+          onClick: () => navigate("/domacnost/bezpecnost"),
         },
       ]}
       title="Remaster"

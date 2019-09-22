@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../components/Layout"
 import AboutUs from "../components/sections/AboutUs"
 import Services from "../components/sections/Services"
-import References from "../components/sections/References"
+// import References from "../components/sections/References"
 import Contact from "../components/sections/Contact"
 import Hero from "../components/CarouselHero"
 import image from "../images/main.jpg"
@@ -13,8 +13,12 @@ const IndexPage = () => (
     <Hero
       content={[
         {
-          title: "Remaster",
-          subtitle: "Technológie pre modernú domácnosť alebo firmu.",
+          title: "AV Integra Servis",
+          subtitle: [
+            "Technológie pre modernú domácnosť alebo firmu.",
+            <br/>,
+            "Široké portfólio servisných služieb."
+          ]
         },
         {
           title: "Smart Home",
@@ -29,7 +33,7 @@ const IndexPage = () => (
       fullScreen
     />
     <Services/>
-    <References/>
+    {/*<References/>*/}
     <AboutUs/>
     <Contact/>
     <div style={{ height: "33vh" }}/>

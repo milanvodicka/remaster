@@ -46,7 +46,7 @@ const useStyles = makeStyles(theme => {
   }
 })
 
-const scrollTo = (id = null) => {
+const scrollTo = (id = null, immediate = false) => {
   if (window) {
     if (!window.sscroll) {
       const SmoothScroll = require("smooth-scroll")
@@ -56,7 +56,7 @@ const scrollTo = (id = null) => {
     const e = id && document.querySelector(`#${id}`)
     sscroll.cancelScroll()
     const options = {
-      speed: 500,
+      speed: immediate ? 1 : 500,
       speedAsDuration: true,
       easing: "easeInOutCubic",
     }
@@ -94,9 +94,9 @@ const phoneNavClick = (closeMenu, anchor = null) => () => {
 const Layout = ({ title = "", children }) => {
   useEffect(() => {
     if (window && window.location.hash) {
-      setTimeout(() => scrollTo(window.location.hash.substring(1)), 750)
+      setTimeout(() => scrollTo(window.location.hash.substring(1), true), 0)
     } else {
-      scrollTo()
+      scrollTo(null, true)
     }
   }, [])
   const classes = useStyles()
@@ -172,7 +172,7 @@ const Layout = ({ title = "", children }) => {
                     <>
                       <Nav name="Domov" />
                       <Nav name="Služby" anchor="sluzby" />
-                      <Nav name="Referencie" anchor="referencie" />
+                      {/*<Nav name="Referencie" anchor="referencie" />*/}
                       <Nav name="O nás" anchor="onas" />
                       <Nav name="Kontakt" anchor="kontakt" />
                     </>
@@ -185,7 +185,7 @@ const Layout = ({ title = "", children }) => {
                       <Menu id="simple-menu" anchorEl={menuEl} keepMounted open={!!menuEl} onClose={closeMenu}>
                         <MenuItem onClick={phoneNavClick(closeMenu)}>Domov</MenuItem>
                         <MenuItem onClick={phoneNavClick(closeMenu, "sluzby")}>Služby</MenuItem>
-                        <MenuItem onClick={phoneNavClick(closeMenu, "referencie")}>Referencie</MenuItem>
+                        {/*<MenuItem onClick={phoneNavClick(closeMenu, "referencie")}>Referencie</MenuItem>*/}
                         <MenuItem onClick={phoneNavClick(closeMenu, "onas")}>O nás</MenuItem>
                         <MenuItem onClick={phoneNavClick(closeMenu, "kontakt")}>Kontakt</MenuItem>
                       </Menu>

@@ -25,3 +25,6 @@ export const idsInViewport = ids => {
       { wasSet: false, ids: {} }
     ).ids
 }
+
+export const secondaryColor = '#56585a';
+export const primaryColor = '#c52033';

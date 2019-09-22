@@ -1,14 +1,14 @@
 import React from "react"
 import { Container, useTheme, Typography, makeStyles } from "@material-ui/core"
-import Hero from "../Hero"
 import SectionTitle from "../SectionTitle"
+import { primaryColor } from "../../helpers";
 
 const Contact = () => {
   const classes = makeStyles({
     a: {
       color: 'rgba(0, 0, 0, 0.87)',
       '&:hover': {
-        color: '#EC5538',
+        color: primaryColor,
       }
     }
   })()

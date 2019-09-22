@@ -20,6 +20,7 @@ import DigitalSignage from "../../images/icons/reklamne-displeje.svg"
 import SmartHome from "../../images/icons/smart-home.svg"
 import Multimedia from "../../images/icons/tv-multimedia.svg"
 import { navigate } from "gatsby"
+import { primaryColor } from "../../helpers"
 
 const ServiceItem = ({ title, text, Icon, onClick = null }) => {
   const classes = makeStyles(theme => ({
@@ -37,7 +38,7 @@ const ServiceItem = ({ title, text, Icon, onClick = null }) => {
               boxShadow:
                 "0px 5px 5px -3px rgba(0,0,0,0.2), 0px 8px 10px 1px rgba(0,0,0,0.14), 0px 3px 14px 2px rgba(0,0,0,0.12)",
               "& path": {
-                fill: "#EC5538 !important",
+                fill: primaryColor + " !important",
               },
             },
           }

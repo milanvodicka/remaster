@@ -14,17 +14,19 @@ const IndexPage = () => (
       content={[
         {
           title: "AV Integra Servis",
-          subtitle: [
-            "Technológie pre modernú domácnosť alebo firmu.",
-            <br/>,
-            "Široké portfólio servisných služieb."
-          ]
+          subtitle: (
+            <>
+              Technológie pre modernú domácnosť alebo firmu.
+              <br />
+              Široké portfólio servisných služieb.
+            </>
+          ),
         },
         {
           title: "Smart Home",
           subtitle: "Inteligentná domácnosť alebo firma.",
           cta: "Viac",
-          onClick: () => navigate('/smart-home'),
+          onClick: () => navigate("/smart-home"),
         },
       ]}
       title="Remaster"
@@ -32,11 +34,11 @@ const IndexPage = () => (
       imageSrc={image}
       fullScreen
     />
-    <Services/>
+    <Services />
     {/*<References/>*/}
-    <AboutUs/>
-    <Contact/>
-    <div style={{ height: "33vh" }}/>
+    <AboutUs />
+    <Contact />
+    <div style={{ height: "33vh" }} />
   </Layout>
 )
 

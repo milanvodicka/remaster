@@ -39,8 +39,8 @@ const ServiceItem = ({ title, text, Icon, onClick = null }) => {
       textTransform: "uppercase",
       fontWeight: 600,
       marginBottom: theme.spacing(2),
-      [theme.breakpoints.up('sm')]: {
-        minHeight: '48px',
+      [theme.breakpoints.up("sm")]: {
+        minHeight: "48px",
       },
     },
     tile: {
@@ -91,7 +91,12 @@ const Services = () => {
           Icon={SmartHome}
           onClick={() => navigate("/smart-home")}
         />
-        <ServiceItem title="Bezpečnosť" text="Zabezpečovací a kamerový systém, kontrola požiaru a úniku vody. Alarmy Jablotron." Icon={Security} />
+        <ServiceItem
+          title="Bezpečnosť"
+          text="Zabezpečovací a kamerový systém, kontrola požiaru a úniku vody. Alarmy Jablotron."
+          Icon={Security}
+          onClick={() => navigate("/domacnost/bezpecnost")}
+        />
         <ServiceItem title="TV, kino a satelit" text="Obývačka na mieru, TV, satelit, ozvučenie, združené ovládanie, Apple TV, a iné." Icon={Sound} />
         <ServiceItem title="Ozvučenie" text="Ozvučenie obývačky, domu, bytu, alebo iných priestorov. Bezdrôtové systémy SONOS, Bluesound a iné." Icon={Sound} />
       </Grid>

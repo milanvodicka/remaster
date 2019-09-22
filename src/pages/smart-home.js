@@ -1,101 +1,18 @@
-import React, { cloneElement } from "react"
+import React from "react"
 import Layout from "../components/Layout"
 import Hero from "../components/Hero"
-import { Typography, Container, useTheme, Grid, makeStyles} from "@material-ui/core"
+import { Typography, Container, Grid, makeStyles} from "@material-ui/core"
 import grey from '@material-ui/core/colors/grey'
-import Transition from "../components/Transition"
 import mainImage from "../images/smart-home.jpg"
 import iphoneImage from "../images/smart-home/iphone.jpg"
 import smartApartment from "../images/smart-home/smart-apartment.jpg"
 import smartAssistans from "../images/smart-home/assistans.jpg"
 import homekitGears from "../images/smart-home/homekits-gear.png"
-
-const TopSpace = ({ children, margin = false, spacing = 6 }) => {
-  const theme = useTheme()
-  const space = theme.spacing(spacing)
-  return cloneElement(children, {
-    style: {
-      ...(margin ? { marginTop: space } : { paddingTop: space }),
-      ...(children.props.style || {}),
-    },
-  })
-}
-
-const Image = ({ image, alt }) => {
-  const classes = makeStyles(theme => ({
-    image: {
-      display: "block",
-      width: "100%",
-      height: "auto",
-      // margin: "auto",
-      borderRadius: "5px",
-    },
-  }))()
-
-  return (
-    <Transition>
-      <img className={classes.image} src={image} alt={alt} />
-    </Transition>
-  )
-}
-
-const SideBySide = ({ reverse = false, children, image, alt, grid = [6, 6], style = {} }) => {
-  const classes = makeStyles(theme => ({
-    imageGrid: {
-      [theme.breakpoints.only("xs")]: {
-        ...(reverse ? { marginBottom: theme.spacing(3) } : { marginTop: theme.spacing(3) }),
-      },
-      ...(reverse ? { paddingRight: theme.spacing(3) } : { paddingLeft: theme.spacing(3) }),
-    },
-  }))()
-
-  const [left, right] = grid;
-
-  const Text = () => (
-    <Grid item sm={left}>
-      {children}
-    </Grid>
-  )
-
-  const GridImage = () => (
-    <Grid item sm={right} className={classes.imageGrid}>
-      <Image image={image} alt={alt} />
-    </Grid>
-  )
-
-  return !reverse ? (
-    <Grid container alignItems="center" style={style}>
-      <Text />
-      <GridImage />
-    </Grid>
-  ) : (
-    <Grid container alignItems="center" style={style}>
-      <GridImage />
-      <Text />
-    </Grid>
-  )
-}
-
-const WideImage = ({ image, alt, style = {} }) => {
-  const classes = makeStyles({
-    wide: {
-      maxWidth: "100%",
-      padding: 0,
-    },
-    image: {
-      width: "100%",
-    },
-  })()
-  return (
-    <Container className={classes.wide} style={style}>
-      <Transition>
-        <img className={classes.image} src={image} alt={alt} />
-      </Transition>
-    </Container>
-  )
-}
-
-const Bold = ({ children }) => <span style={{ fontWeight: "bold" }}>{children}</span>
+import Link from "../components/Link"
+import TopSpace from "../components/TopSpace"
+import SideBySide from "../components/SideBySide"
+import WideImage from "../components/WideImage"
+import Bold from "../components/Bold"
 
 const Page = () => {
   const classes = makeStyles((theme) => ({
@@ -198,7 +115,7 @@ const Page = () => {
           <Typography variant="body1" paragraph>
             Okrem návrhu a inštalácie sa sústreďujeme na pohotový popredajný servis a starostlivosť o našich zákazníkov.
             <br/>
-            <Bold>Kontaktujte nás a dohodnite si stretnutie v našom showroome.</Bold>
+            <Bold><Link href="/#kontakt">Kontaktujte nás</Link> a dohodnite si stretnutie v našom showroome.</Bold>
           </Typography>
         </TopSpace>
       </Container>

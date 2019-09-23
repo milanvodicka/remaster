@@ -3,27 +3,54 @@ import Layout from "./Layout"
 import Hero from "./Hero"
 import TopSpace from "./TopSpace"
 import SideBySide from "./SideBySide"
-import { Container, Typography } from "@material-ui/core"
+import { Container, Grid, Typography, Breadcrumbs } from "@material-ui/core"
+import Link from "./Link"
 
-const ServicePage = ({ title, subtitle, mainImage, intro, introImage, introTitle, offer, offerImage, offerTitle, properties, propertiesImage, propertiesTitle, end }) => {
+const ServicePage = ({
+  title,
+  subtitle,
+  mainImage,
+  intro,
+  introImage,
+  introTitle,
+  offer,
+  offerImage,
+  offerTitle,
+  properties,
+  propertiesImage,
+  propertiesTitle,
+  end,
+  breadcrumbs = [],
+}) => {
   return (
     <Layout>
       <Hero title={title} subtitle={subtitle} imageSrc={mainImage} />
       <Container>
+        {breadcrumbs && (
+          <TopSpace>
+            <Breadcrumbs>
+              {breadcrumbs.map(([breadcrumb, link]) => (link ? <Link href={link}>{breadcrumb}</Link> : <Typography>{breadcrumb}</Typography>))}
+            </Breadcrumbs>
+          </TopSpace>
+        )}
         <TopSpace>
-          <SideBySide image={introImage} alt={introTitle}>
-            {intro}
-          </SideBySide>
+          <Grid container>
+            <Grid item sm={12}>
+              {intro}
+            </Grid>
+          </Grid>
         </TopSpace>
         <TopSpace>
-          <SideBySide reverse image={offerImage} alt={offerTitle}>
+          <SideBySide image={offerImage} alt={offerTitle} grid={[8, 4]}>
             {offer}
           </SideBySide>
         </TopSpace>
         <TopSpace>
-          <SideBySide image={propertiesImage} alt={propertiesTitle}>
-            {properties}
-          </SideBySide>
+          <Grid container>
+            <Grid item sm={12}>
+              {properties}
+            </Grid>
+          </Grid>
         </TopSpace>
         <TopSpace>{end}</TopSpace>
       </Container>

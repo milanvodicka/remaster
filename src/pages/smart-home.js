@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/Layout"
 import Hero from "../components/Hero"
-import { Typography, Container } from "@material-ui/core"
+import { Typography, Container, Breadcrumbs } from "@material-ui/core"
 import mainImage from "../images/smart-home.jpg"
 import iphoneImage from "../images/smart-home/iphone.jpg"
 import smartApartment from "../images/smart-home/smart-apartment.jpg"
@@ -19,6 +19,13 @@ const Page = () => (
   <Layout>
     <Hero title="Smart Home" subtitle="Inteligentná domácnosť" imageSrc={mainImage} />
     <Container>
+      <TopSpace>
+        <Breadcrumbs>
+          <Link href="/#sluzby">Služby</Link>
+          <Typography>Domácnosť</Typography>
+          <Typography>Inteligentná domácnosť</Typography>
+        </Breadcrumbs>
+      </TopSpace>
       <TopSpace>
         <SideBySide image={iphoneImage} alt="Bezdrôtová inteligentná domácnosť.">
           <Typography variant="body1" paragraph>

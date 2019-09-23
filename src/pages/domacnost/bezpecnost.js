@@ -10,6 +10,7 @@ import Link from "../../components/Link"
 const Page = () => {
   return (
     <ServicePage
+      breadcrumbs={[["Služby", "/#sluzby"], ["Domácnosť"], ["Bezpečnosť"]]}
       title="Bezpečnosť"
       subtitle="Zabezpečovací a kamerový systém"
       mainImage={main}

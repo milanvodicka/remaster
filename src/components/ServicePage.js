@@ -3,36 +3,15 @@ import Layout from "./Layout"
 import Hero from "./Hero"
 import TopSpace from "./TopSpace"
 import SideBySide from "./SideBySide"
-import { Container, Grid, Typography, Breadcrumbs } from "@material-ui/core"
-import Link from "./Link"
+import { Container, Grid } from "@material-ui/core"
+import Breadcrumbs from "./Breadcrumbs"
 
-const ServicePage = ({
-  title,
-  subtitle,
-  mainImage,
-  intro,
-  introImage,
-  introTitle,
-  offer,
-  offerImage,
-  offerTitle,
-  properties,
-  propertiesImage,
-  propertiesTitle,
-  end,
-  breadcrumbs = [],
-}) => {
+const ServicePage = ({ title, subtitle, mainImage, intro, offer, offerImage, offerTitle, properties, end, breadcrumbs = [] }) => {
   return (
     <Layout>
       <Hero title={title} subtitle={subtitle} imageSrc={mainImage} />
+      {breadcrumbs && <Breadcrumbs breadcrumbs={breadcrumbs}/>}
       <Container>
-        {breadcrumbs && (
-          <TopSpace>
-            <Breadcrumbs>
-              {breadcrumbs.map(([breadcrumb, link]) => (link ? <Link href={link}>{breadcrumb}</Link> : <Typography>{breadcrumb}</Typography>))}
-            </Breadcrumbs>
-          </TopSpace>
-        )}
         <TopSpace>
           <Grid container>
             <Grid item sm={12}>

@@ -97,7 +97,12 @@ const Services = () => {
           Icon={Security}
           onClick={() => navigate("/domacnost/bezpecnost")}
         />
-        <ServiceItem title="TV, kino a satelit" text="Obývačka na mieru, TV, satelit, ozvučenie, združené ovládanie, Apple TV, a iné." Icon={Sound} />
+        <ServiceItem
+          title="TV, kino a satelit"
+          text="Obývačka na mieru, TV, satelit, ozvučenie, združené ovládanie, Apple TV, a iné."
+          Icon={Sound}
+          onClick={() => navigate("/domacnost/tv-kino-satelit")}
+        />
         <ServiceItem title="Ozvučenie" text="Ozvučenie obývačky, domu, bytu, alebo iných priestorov. Bezdrôtové systémy SONOS, Bluesound a iné." Icon={Sound} />
       </Grid>
       <SectionSubtitle style={{ textAlign: "center" }}>Firma</SectionSubtitle>

@@ -103,20 +103,32 @@ const Services = () => {
           Icon={Sound}
           onClick={() => navigate("/domacnost/tv-kino-satelit")}
         />
-        <ServiceItem title="Ozvučenie" text="Ozvučenie obývačky, domu, bytu, alebo iných priestorov. Bezdrôtové systémy SONOS, Bluesound a iné." Icon={Sound} />
+        <ServiceItem
+          title="Ozvučenie"
+          text="Ozvučenie obývačky, domu, bytu, alebo iných priestorov. Bezdrôtové systémy SONOS, Bluesound a iné."
+          Icon={HiFiSound}
+          onClick={() => navigate("/domacnost/ozvucenie-hifi")}
+        />
       </Grid>
       <SectionSubtitle style={{ textAlign: "center" }}>Firma</SectionSubtitle>
       <Grid container spacing={2}>
-        <ServiceItem title="Zabezpečenie firemných priestorov" text="..." Icon={Security} />
+        <ServiceItem
+          title="Zabezpečenie firemných priestorov"
+          text="Kontrola pohybu osôb a ochrana majetku."
+          Icon={Security}
+          onClick={() => navigate("/firma/zabezpecenie-firemnych-priestorov")}
+        />
         <ServiceItem
           title="TV a satelitný príjem"
           text="Príjem SAT a DVB-T na mieru, rozvod signálu do izieb, IP TV, DVB-T/C, interaktívny hotelový systém a infokanál."
           Icon={HotelTV}
+          onClick={() => navigate("/firma/tv-satelitny-prijem")}
         />
         <ServiceItem
           title="Konferenčná a zasadacia miestnosť"
           text="Projektor, TV, ozvučenie, bezdrôtový prenos videa, ovládanie svetiel, žalúzií, konferenčný systém, ..."
           Icon={SmartMeetingRoom}
+          onClick={() => navigate("/firma/konferencna-zasadacia-miestnost")}
         />
         <ServiceItem title="Reklamné displeje a videostreamy" text="Reklamné a informačné displeje a obrazovky pre predajne, hotely, reštaurácie a iné." Icon={DigitalSignage} />
       </Grid>

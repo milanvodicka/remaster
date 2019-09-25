@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/Layout"
 import Hero from "../components/Hero"
-import { Typography, Container, Breadcrumbs } from "@material-ui/core"
+import { Typography, Container } from "@material-ui/core"
 import mainImage from "../images/smart-home.jpg"
 import iphoneImage from "../images/smart-home/iphone.jpg"
 import smartApartment from "../images/smart-home/smart-apartment.jpg"
@@ -14,18 +14,13 @@ import WideImage from "../components/WideImage"
 import Bold from "../components/Bold"
 import List from "../components/List"
 import FourCells from "../components/FourCells"
+import Breadcrumbs from "../components/Breadcrumbs"
 
 const Page = () => (
   <Layout>
     <Hero title="Smart Home" subtitle="Inteligentná domácnosť" imageSrc={mainImage} />
+    <Breadcrumbs breadcrumbs={[["Služby", "/#sluzby"], ["Domácnosť"], ["Smart Home"]]}/>
     <Container>
-      <TopSpace>
-        <Breadcrumbs>
-          <Link href="/#sluzby">Služby</Link>
-          <Typography>Domácnosť</Typography>
-          <Typography>Inteligentná domácnosť</Typography>
-        </Breadcrumbs>
-      </TopSpace>
       <TopSpace>
         <SideBySide image={iphoneImage} alt="Bezdrôtová inteligentná domácnosť.">
           <Typography variant="body1" paragraph>

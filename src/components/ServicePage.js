@@ -10,7 +10,7 @@ const ServicePage = ({ title, subtitle, mainImage, intro, offer, offerImage, off
   return (
     <Layout>
       <Hero title={title} subtitle={subtitle} imageSrc={mainImage} />
-      {breadcrumbs && <Breadcrumbs breadcrumbs={breadcrumbs}/>}
+      {breadcrumbs && <Breadcrumbs breadcrumbs={breadcrumbs} />}
       <Container>
         <TopSpace>
           <Grid container>
@@ -19,19 +19,23 @@ const ServicePage = ({ title, subtitle, mainImage, intro, offer, offerImage, off
             </Grid>
           </Grid>
         </TopSpace>
-        <TopSpace>
-          <SideBySide image={offerImage} alt={offerTitle} grid={[8, 4]}>
-            {offer}
-          </SideBySide>
-        </TopSpace>
-        <TopSpace>
-          <Grid container>
-            <Grid item sm={12}>
-              {properties}
+        {offer &&
+          <TopSpace>
+            <SideBySide image={offerImage} alt={offerTitle} grid={[8, 4]}>
+              {offer}
+            </SideBySide>
+          </TopSpace>
+        }
+        {properties && (
+          <TopSpace>
+            <Grid container>
+              <Grid item sm={12}>
+                {properties}
+              </Grid>
             </Grid>
-          </Grid>
-        </TopSpace>
-        <TopSpace>{end}</TopSpace>
+          </TopSpace>
+        )}
+        {end && <TopSpace>{end}</TopSpace>}
       </Container>
       <div style={{ height: "33vh" }} />
     </Layout>

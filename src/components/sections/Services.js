@@ -130,12 +130,27 @@ const Services = () => {
           Icon={SmartMeetingRoom}
           onClick={() => navigate("/firma/konferencna-zasadacia-miestnost")}
         />
-        <ServiceItem title="Reklamné displeje a videostreamy" text="Reklamné a informačné displeje a obrazovky pre predajne, hotely, reštaurácie a iné." Icon={DigitalSignage} />
+        <ServiceItem
+          title="Reklamné displeje a videostreamy"
+          text="Reklamné a informačné displeje a obrazovky pre predajne, hotely, reštaurácie a iné."
+          Icon={DigitalSignage}
+          onClick={() => navigate("/firma/informacne-displeje-video-steny")}
+        />
       </Grid>
       <SectionSubtitle style={{ textAlign: "center" }}>Servis</SectionSubtitle>
       <Grid container spacing={2}>
-        <ServiceItem title="Servis audio a video zariadení" text="Poskytujeme široké portfólio servisných aktivít." Icon={HiFiSound} />
-        <ServiceItem title="Čistenie LP platní" text="Čistenie LP platní špičkovou ultrazvukovou technológiou." Icon={CleaningLPs} />
+        <ServiceItem
+          title="Servis audio a video zariadení"
+          text="Poskytujeme široké portfólio servisných aktivít."
+          Icon={HiFiSound}
+          onClick={() => navigate("/servis/servis-audio-video-zariadeni")}
+        />
+        <ServiceItem
+          title="Čistenie LP platní"
+          text="Čistenie LP platní špičkovou ultrazvukovou technológiou."
+          Icon={CleaningLPs}
+          onClick={() => navigate("/servis/cistenie-platni")}
+        />
       </Grid>
     </Container>
   )

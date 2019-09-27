@@ -1,6 +1,6 @@
 import React from "react"
 import ServicePage from "../../components/ServicePage"
-import main from "../../images/firma/reklamne-displeje-videosteny/main.png"
+import main from "../../images/firma/reklamne-displeje-videosteny/main.jpg"
 import offer from "../../images/firma/reklamne-displeje-videosteny/offer.jpg"
 import { Typography } from "@material-ui/core"
 import List from "../../components/List"

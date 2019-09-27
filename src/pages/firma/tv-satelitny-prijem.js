@@ -1,6 +1,6 @@
 import React from "react"
 import ServicePage from "../../components/ServicePage"
-import main from "../../images/firma/tv-satelitny-prijem/main.png"
+import main from "../../images/firma/tv-satelitny-prijem/main.jpg"
 import offer from "../../images/firma/tv-satelitny-prijem/offer.jpg"
 import { Typography } from "@material-ui/core"
 import Bold from "../../components/Bold"

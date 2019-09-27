@@ -1,7 +1,7 @@
 import React from "react"
 import ServicePage from "../../components/ServicePage"
 import main from "../../images/domacnost/bezpecnost/main.jpg"
-import offer from "../../images/domacnost/bezpecnost/offer.png"
+import offer from "../../images/domacnost/bezpecnost/offer.jpg"
 import { Typography } from "@material-ui/core"
 import Bold from "../../components/Bold"
 import List from "../../components/List"

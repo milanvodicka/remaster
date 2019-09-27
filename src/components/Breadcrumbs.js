@@ -28,11 +28,11 @@ const Breadcrumbs = ({ breadcrumbs }) => {
         >
           {breadcrumbs.map(([breadcrumb, link]) =>
             link ? (
-              <Link href={link}>
+              <Link href={link} key={breadcrumb}>
                 <Typography variant="body2">{breadcrumb}</Typography>
               </Link>
             ) : (
-              <Typography variant="body2" className={classes.typo}>
+              <Typography variant="body2" className={classes.typo} key={breadcrumb}>
                 {breadcrumb}
               </Typography>
             )

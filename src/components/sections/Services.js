@@ -89,7 +89,7 @@ const Services = () => {
           title="Smart Home"
           text="Inteligentná domácnosť alebo firma. Ovládanie kúrenia, osvetlenia, závlahy, žalúzií a iné."
           Icon={SmartHome}
-          onClick={() => navigate("/smart-home")}
+          onClick={() => navigate("/domacnost/smart-home")}
         />
         <ServiceItem
           title="Bezpečnosť"

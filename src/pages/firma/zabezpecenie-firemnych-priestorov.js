@@ -1,6 +1,7 @@
 import React from "react"
 import ServicePage from "../../components/ServicePage"
-import main from "../../images/main-default.jpg"
+import main from "../../images/firma/zabezpecenie-firemnych-priestorov/main.jpg"
+import offer from "../../images/firma/zabezpecenie-firemnych-priestorov/offer.png"
 import noImage from "../../images/default.jpg"
 import { Typography } from "@material-ui/core"
 import Bold from "../../components/Bold"
@@ -16,12 +17,10 @@ const Page = () => {
       mainImage={main}
       intro={
         <Typography variant="body1" paragraph>
-          Kontrola pohybu osôb a ochrana majetku, je dnes neodmysliteľnou súčasťou firemných priestorov. Ponúkame návrh, dodávku a <Bold>inštalácie systému Jablotron</Bold>, a taktiež
-          prístupové a kamerové systémy od rôznych výrobcov.
+          Kontrola pohybu osôb a ochrana majetku, je dnes neodmysliteľnou súčasťou firemných priestorov. Ponúkame návrh, dodávku a <Bold>inštalácie systému Jablotron</Bold>, a
+          taktiež prístupové a kamerové systémy od rôznych výrobcov.
         </Typography>
       }
-      introImage={noImage}
-      introTitle="Zabezpečenie firemných priestorov"
       offer={
         <>
           <Typography variant="h4" gutterBottom>
@@ -46,7 +45,7 @@ const Page = () => {
           />
         </>
       }
-      offerImage={noImage}
+      offerImage={offer}
       offerTitle="Naša ponuka"
       properties={
         <>
@@ -67,8 +66,6 @@ const Page = () => {
           />
         </>
       }
-      propertiesImage={noImage}
-      propertiesTitle="Vybrané vlastnosti našich systémov"
       end={
         <Typography variant="body1">
           Okrem návrhu a inštalácie sa sústreďujeme na pohotový popredajný servis a starostlivosť o našich zákazníkov.

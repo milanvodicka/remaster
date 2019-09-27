@@ -74,7 +74,7 @@ export const HeroWrapper = ({ children, imageSrc, id = null, fullScreen = false 
         color="black"
         opacity={0.3}
         minHeight={fullScreen ? "calc(100vh - 128px)" : "60vh"}
-        parallaxOffset={150}
+        parallaxOffset={50}
         className={classes.hero}
       >
         <Container style={{ textAlign: "left" }}>

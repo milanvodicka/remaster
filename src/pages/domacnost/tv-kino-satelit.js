@@ -1,7 +1,7 @@
 import React from "react"
 import ServicePage from "../../components/ServicePage"
-import main from "../../images/main-default.jpg"
-import noImage from "../../images/default.jpg"
+import main from "../../images/domacnost/tv-kino-satelit/main.jpg"
+import offer from "../../images/domacnost/tv-kino-satelit/offer.jpg"
 import { Typography } from "@material-ui/core"
 import Bold from "../../components/Bold"
 import List from "../../components/List"
@@ -12,15 +12,13 @@ const Page = () => {
     <ServicePage
       breadcrumbs={[["Služby", "/#sluzby"], ["Domácnosť"], ["TV, kino a satelit"]]}
       title="TV, kino a satelit"
-      subtitle="Zabezpečovací a kamerový systém"
+      subtitle="TV, projektor a domáce kino pre náročných klientov"
       mainImage={main}
       intro={
         <Typography variant="body1" paragraph>
           Zabezpečujeme návrh, dodávku a <Bold>inštalácie TV, projektorov a domáceho kina</Bold> pre náročných klientov, ktorí túžia po vyššom štandarde programovej ponuky a kvality obrazu a zvuku.
         </Typography>
       }
-      introImage={noImage}
-      introTitle="Zabezpečovací a kamerový systém"
       offer={
         <>
           <Typography variant="h4" gutterBottom>
@@ -38,7 +36,7 @@ const Page = () => {
           />
         </>
       }
-      offerImage={noImage}
+      offerImage={offer}
       offerTitle="Naša ponuka"
       properties={
         <>
@@ -56,8 +54,6 @@ const Page = () => {
           />
         </>
       }
-      propertiesImage={noImage}
-      propertiesTitle="Vybrané vlastnosti našich systémov"
       end={
         <Typography variant="body1">
           Okrem návrhu a inštalácie sa sústreďujeme na pohotový popredajný servis a starostlivosť o našich zákazníkov.

@@ -1,7 +1,7 @@
 import React from "react"
 import ServicePage from "../../components/ServicePage"
-import main from "../../images/main-default.jpg"
-import noImage from "../../images/default.jpg"
+import main from "../../images/firma/reklamne-displeje-videosteny/main.png"
+import offer from "../../images/firma/reklamne-displeje-videosteny/offer.jpg"
 import { Typography } from "@material-ui/core"
 import List from "../../components/List"
 import Link from "../../components/Link"
@@ -19,8 +19,6 @@ const Page = () => {
           reklamnej siete.
         </Typography>
       }
-      introImage={noImage}
-      introTitle="Informačné displeje a video steny"
       offer={
         <>
           <Typography variant="h4" gutterBottom>
@@ -36,7 +34,7 @@ const Page = () => {
           />
         </>
       }
-      offerImage={noImage}
+      offerImage={offer}
       offerTitle="Naša ponuka"
       properties={
         <>
@@ -53,8 +51,6 @@ const Page = () => {
           />
         </>
       }
-      propertiesImage={noImage}
-      propertiesTitle="Vybrané vlastnosti našich systémov"
       end={
         <Typography variant="body1">
           Okrem návrhu a inštalácie sa sústreďujeme na pohotový popredajný servis a starostlivosť o našich zákazníkov.

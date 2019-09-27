@@ -18,8 +18,6 @@ const Page = () => {
           Poskytujeme široké portfólio servisných aktivít.
         </Typography>
       }
-      introImage={noImage}
-      introTitle="Servis audio a video zariadení"
       offer={
         <>
           <Typography variant="h4" gutterBottom>

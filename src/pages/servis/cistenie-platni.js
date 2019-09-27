@@ -42,8 +42,6 @@ const Page = () => {
           </Typography>
         </>
       }
-      introImage={noImage}
-      introTitle="Čistenie platní"
       offer={
         <Paper className={classes.priceListWrapper}>
           <Grid container spacing={3}>

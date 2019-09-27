@@ -1,7 +1,7 @@
 import React from "react"
 import ServicePage from "../../components/ServicePage"
-import main from "../../images/main-default.jpg"
-import noImage from "../../images/default.jpg"
+import main from "../../images/domacnost/ozvucenie/main.jpg"
+import offer from "../../images/domacnost/ozvucenie/offer.jpg"
 import { Typography } from "@material-ui/core"
 import List from "../../components/List"
 import Link from "../../components/Link"
@@ -19,8 +19,6 @@ const Page = () => {
           posluch.
         </Typography>
       }
-      introImage={noImage}
-      introTitle="Ozvučenie a Hi-Fi"
       offer={
         <>
           <Typography variant="h4" gutterBottom>
@@ -37,7 +35,7 @@ const Page = () => {
           />
         </>
       }
-      offerImage={noImage}
+      offerImage={offer}
       offerTitle="Naša ponuka"
       properties={
         <>
@@ -55,8 +53,6 @@ const Page = () => {
           />
         </>
       }
-      propertiesImage={noImage}
-      propertiesTitle="Vybrané vlastnosti našich systémov"
       end={
         <Typography variant="body1">
           Okrem návrhu a inštalácie sa sústreďujeme na pohotový popredajný servis a starostlivosť o našich zákazníkov.

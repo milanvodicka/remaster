@@ -1,7 +1,7 @@
 import React from "react"
 import ServicePage from "../../components/ServicePage"
-import main from "../../images/main-default.jpg"
-import noImage from "../../images/default.jpg"
+import main from "../../images/domacnost/bezpecnost/main.jpg"
+import offer from "../../images/domacnost/bezpecnost/offer.png"
 import { Typography } from "@material-ui/core"
 import Bold from "../../components/Bold"
 import List from "../../components/List"
@@ -20,8 +20,6 @@ const Page = () => {
           <Bold>inštalácie alarmu Jablotron</Bold>, a vybraných kamerových systémov.
         </Typography>
       }
-      introImage={noImage}
-      introTitle="Zabezpečovací a kamerový systém"
       offer={
         <>
           <Typography variant="h4" gutterBottom>
@@ -44,7 +42,7 @@ const Page = () => {
           />
         </>
       }
-      offerImage={noImage}
+      offerImage={offer}
       offerTitle="Naša ponuka"
       properties={
         <>
@@ -64,8 +62,6 @@ const Page = () => {
           />
         </>
       }
-      propertiesImage={noImage}
-      propertiesTitle="Vybrané vlastnosti našich systémov"
       end={
         <Typography variant="body1">
           Okrem návrhu a inštalácie sa sústreďujeme na pohotový popredajný servis a starostlivosť o našich zákazníkov.

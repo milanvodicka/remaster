@@ -1,7 +1,7 @@
 import React from "react"
 import ServicePage from "../../components/ServicePage"
-import main from "../../images/main-default.jpg"
-import noImage from "../../images/default.jpg"
+import main from "../../images/servis/audio-video/main.jpg"
+import offer from "../../images/servis/audio-video/offer.jpg"
 import { Typography } from "@material-ui/core"
 import List from "../../components/List"
 import Link from "../../components/Link"
@@ -35,7 +35,7 @@ const Page = () => {
           />
         </>
       }
-      offerImage={noImage}
+      offerImage={offer}
       offerTitle="Naša ponuka"
       end={
         <Typography variant="body1">

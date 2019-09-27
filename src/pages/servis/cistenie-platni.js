@@ -1,7 +1,7 @@
 import React from "react"
 import ServicePage from "../../components/ServicePage"
-import main from "../../images/main-default.jpg"
-import noImage from "../../images/default.jpg"
+import main from "../../images/servis/cistenie-platni/main.jpg"
+import offer from "../../images/servis/cistenie-platni/offer.png"
 import { Grid, Typography, Paper, makeStyles } from "@material-ui/core"
 import Link from "../../components/Link"
 import Bold from "../../components/Bold"
@@ -66,7 +66,7 @@ const Page = () => {
           </Grid>
         </Paper>
       }
-      offerImage={noImage}
+      offerImage={offer}
       offerTitle="Naša ponuka"
       end={
         <Typography variant="body1">

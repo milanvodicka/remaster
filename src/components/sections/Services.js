@@ -83,7 +83,7 @@ const Services = () => {
   return (
     <Container id="sluzby" style={{ marginTop: theme.spacing(4), marginBottom: theme.spacing(4) }}>
       <SectionTitle>Služby</SectionTitle>
-      <SectionSubtitle style={{ textAlign: "center" }}>Domácnosť</SectionSubtitle>
+      <SectionSubtitle>Domácnosť</SectionSubtitle>
       <Grid container spacing={2}>
         <ServiceItem
           title="Smart Home"
@@ -110,7 +110,7 @@ const Services = () => {
           onClick={() => navigate("/domacnost/ozvucenie-hifi")}
         />
       </Grid>
-      <SectionSubtitle style={{ textAlign: "center" }}>Firma</SectionSubtitle>
+      <SectionSubtitle>Firma</SectionSubtitle>
       <Grid container spacing={2}>
         <ServiceItem
           title="Zabezpečenie firemných priestorov"
@@ -137,7 +137,7 @@ const Services = () => {
           onClick={() => navigate("/firma/informacne-displeje-video-steny")}
         />
       </Grid>
-      <SectionSubtitle style={{ textAlign: "center" }}>Servis</SectionSubtitle>
+      <SectionSubtitle>Servis</SectionSubtitle>
       <Grid container spacing={2}>
         <ServiceItem
           title="Servis audio a video zariadení"

@@ -29,8 +29,8 @@ const Page = () => {
             items={[
               "Inštalácia TV, projektorov a ozvučenia",
               "Káblový, alebo bezdrôtový prenos obrazu a zvuku",
-              "RTI - ovládanie celej miestnosti z tabletu",
-              "Videokonferenčné systémy Logitech",
+              "Ovládanie celej miestnosti z tabletu - RTI, Crestron",
+              "Videokonferenčné systémy Logitech, Cisco, Polycom",
             ]}
           />
         </>
@@ -44,10 +44,10 @@ const Page = () => {
           </Typography>
           <List
             items={[
-              "prepínanie obrazu medzi TV a projektorom",
-              "možnosť ovládania svetiel a žalúzií",
+              "bezdrôtový prenos videa a zvuku",
               "externé mikrofóny pre videokonferenciu",
               "videokonferencia pre Skype, Teams a iné",
+              "možnosť ovládania svetiel a žalúzií",
             ]}
           />
         </>

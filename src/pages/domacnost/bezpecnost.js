@@ -36,7 +36,7 @@ const Page = () => {
               <>Video vrátnik, otváranie garážovej brány</>,
               <>Perimetrická ochrana pozemku</>,
               <>
-                Systémy <Bold>Netatmo, Fibaro, Ring</Bold> a ďalšie
+                Systémy <Bold>Netatmo, Fibaro, Homey</Bold> a ďalšie
               </>,
             ]}
           />

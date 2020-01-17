@@ -29,7 +29,7 @@ const Page = () => {
               "Inštalácia TV a projektorov",
               "Inštalácia satelitov pre príjem z viacerých družíc",
               "Ozvučenie ku TV a domáce kino",
-              "Jedno diaľkové ovládanie RTI pre všetky zariadenia",
+              "Jedno diaľkové ovládanie pre všetky zariadenia",
               "Prehrávanie filmov z domáceho úložiska",
               "Apple TV, Chromecast a iné",
             ]}
@@ -45,11 +45,11 @@ const Page = () => {
           </Typography>
           <List
             items={[
+              "elektrické vysúvacie plátno, zabudované v strope",
               "prepínanie obrazu medzi TV a projektorom",
               "SAT príjem od rôznych poskytovateľov naraz, DIGI, Skylink, Freesat",
-              "TV rozvod do izieb, príjem pre viacerých užívateľov",
               "stereo alebo viackanálový zvuk, Dolby Atmos",
-              "možnosť ovládania svetiel priamo z diaľkového ovládača RTI",
+              "možnosť ovládania svetiel priamo z diaľkového ovládača",
             ]}
           />
         </>

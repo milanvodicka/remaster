@@ -23,9 +23,9 @@ const Contact = () => {
         <Typography variant="body1">
           Pluhová 40/A<br/>
           831 03, Bratislava<br/><br/>
-          Peter Vodička ml. – obchodný zástupca<br/>
+          Peter Vodička jr. – obchodný zástupca<br/>
           Tel: <a className={classes.a} href="tel:+421 907 574 291">+421 907 574 291</a>,<br/>
-          Email: <a className={classes.a} href="mailto:vodicka@remaster.sk">vodicka@remaster.sk</a><br/>
+          Email: <a className={classes.a} href="mailto:vodicka@remaster.sk">vodicka@avintegra.sk</a><br/>
         </Typography>
       </Container>
   )

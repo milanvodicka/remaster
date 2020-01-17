@@ -26,10 +26,10 @@ const Page = () => {
           </Typography>
           <List
             items={[
-              "Inštalácia reproduktorov a ozvučenia v ktorejkoľvek miestnosti",
+              "Inštalácia reproduktorov a ozvučenia",
               "Bezdrôtové systémy SONOS, BlueSound a iné",
               "Ozvučenie obývačky a domáce kino",
-              "Stereo High-End a HiFi zostavy",
+              "Stereo High-End a HiFi zostavy (NAD, Dynaudio a iné)",
               "Inštalácie a nastavenie gramofónov",
             ]}
           />
@@ -45,7 +45,7 @@ const Page = () => {
           <List
             items={[
               "Možnosť použitia bezdrôtových systémov, bez nutnosti káblovania",
-              "Možnosť prehrávania hudby vo všetkých miestnostiach naraz - Party mode",
+              "Možnosť prehrávania hudby vo všetkých miestnostiach - Party mode",
               "Ovládanie cez smartphone",
               "Ozvučenie exteriéru, napr. terasa, záhrada a iné",
               "Prehrávanie internetových rádií, hudobných služieb Deezer, Spotify a iné",

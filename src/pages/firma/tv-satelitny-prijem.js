@@ -27,10 +27,10 @@ const Page = () => {
           </Typography>
           <List
             items={[
+              "Rozvod TV signálu a videa po budove (IP TV, DVB-S/C/T)",
               "Inštalácia satelitov pre príjem z viacerých družíc",
-              "Rozvod TV signálu po budove (IP TV, DVB-S/C/T)",
               "Inštalácia TV, displejov a projektorov",
-              "Interaktívny hotelový TV systém",
+              "Hotelové TV systémy",
             ]}
           />
         </>
@@ -44,9 +44,9 @@ const Page = () => {
           </Typography>
           <List
             items={[
+              "Rozvod po koaxiálnom kábli, alebo cez IP sieť",
               "SAT príjem od rôznych poskytovateľov naraz (DIGI, Skylink, Freesat a iné)",
               "Príjem pre desiatky a stovky TV (penzióny, hotely a iné)",
-              "Rozvod po koaxiálnom kábli, alebo cez IP",
               "Interaktívny hotelový TV systém a infokanál (prepojenie so systémom HOREC a iné)",
             ]}
           />

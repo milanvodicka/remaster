@@ -25,9 +25,8 @@ const Page = () => {
           </Typography>
           <List
             items={[
-              "Servis audio značiek NAD, Bluesound, Dynaudio, Electrocompaniet, Meridian,",
-              "Servis gramofónov Rega, Pro-Ject,",
-              "Servis projektorov Epson, Optoma",
+              "Servis audio Hi-Fi značiek NAD, Bluesound, Dynaudio, Electrocompaniet, Meridian,",
+              "Servis a úpravy gramofónov Rega, Pro-Ject, (nastavenie, výmeny prenosiek atď.)",
               "ON-SITE servis audio-video systémov",
               "ON-SITE servis projektorov",
               "ON-SITE servis zasadačiek a meeting-room",

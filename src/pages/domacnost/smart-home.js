@@ -19,7 +19,7 @@ import Breadcrumbs from "../../components/Breadcrumbs"
 const Page = () => (
   <Layout>
     <Hero title="Smart Home" subtitle="Inteligentná domácnosť" imageSrc={mainImage} />
-    <Breadcrumbs breadcrumbs={[["Služby", "/#sluzby"], ["Domácnosť"], ["Smart Home"]]}/>
+    <Breadcrumbs breadcrumbs={[["Služby", "/#sluzby"], ["Domácnosť"], ["Smart Home"]]} />
     <Container>
       <TopSpace>
         <SideBySide image={iphoneImage} alt="Bezdrôtová inteligentná domácnosť.">
@@ -32,10 +32,18 @@ const Page = () => (
       <TopSpace spacing={3}>
         <FourCells
           cells={[
-              <>Inštalujeme systémy <Bold>Fibaro, RTI, Jablotron, Apple Homekit, Homey a Logitech Harmony</Bold>.</>,
-              <>Použitie <Bold>bezdrotových technológií Z-WAVE, Zigbee</Bold> alebo <Bold>Wifi</Bold> bez nutnosti ťahania káblov.</>,
-              <>Spočiatku môže domácnosť obsahovať iba niekoľko základných funkcií a <Bold>cenou sa Vám prispôsobí</Bold>.</>,
-              <>Ovládanie pomocou smartphone alebo hlasového ovládania <Bold>Alexa, Siri, Google Assistant</Bold>.</>,
+            <>
+              Cenovo dostupné systémy <Bold>Fibaro, Homey, Jablotron, Apple Homekit, Philips HUE, Lutron, RTI</Bold>.
+            </>,
+            <>
+              Použitie <Bold>bezdrotových technológií Z-WAVE, Zigbee, Wifi</Bold>, a iných, bez nutnosti ťahania káblov.
+            </>,
+            <>
+              Spočiatku môže domácnosť obsahovať iba niekoľko základných funkcií a <Bold>cenou sa Vám prispôsobí</Bold>.
+            </>,
+            <>
+              Ovládanie pomocou smartphone alebo hlasového ovládania <Bold>Alexa, Siri, Google Assistant</Bold>.
+            </>,
           ]}
         />
       </TopSpace>
@@ -55,16 +63,16 @@ const Page = () => (
             <List
               items={[
                 <>
+                  automatizované <Bold>ovládanie svetiel a žalúzií</Bold> (možné realizovať aj na pôvodných elektroinštaláciách)
+                </>,
+                <>
+                  automatizované <Bold>ovládanie kúrenia</Bold> (ovládanie kotla, podlahového kúrenia, alebo radiátorových hlavíc)
+                </>,
+                <>
                   <Bold>zabezpečenie domácnosti</Bold> pomocou pohybových a dverových čidiel a kamery
                 </>,
                 <>
                   automatické <Bold>zabránenie vytopeniu</Bold> uzatvorením prívodu vody
-                </>,
-                <>
-                  prebudenie osôb v prípade <Bold>detekcie dymu a požiaru</Bold>
-                </>,
-                <>
-                  automatizované <Bold>ovládanie kúrenia</Bold> (ovládanie kotla, podlahového kúrenia, alebo radiátorových hlavíc)
                 </>,
               ]}
             />
@@ -77,10 +85,10 @@ const Page = () => (
             <List
               items={[
                 <>
-                  automatizované <Bold>ovládanie svetiel a žalúzií</Bold> (možné realizovať aj na pôvodných elektroinštaláciách)
+                  prebudenie osôb v prípade <Bold>detekcie dymu a požiaru</Bold>
                 </>,
                 <>
-                  ovládanie <Bold>audio-video zariadení a domáceho kina</Bold> pomocou jediného ovládača
+                  ovládanie <Bold>audio-video zariadení a domáceho kina</Bold>
                 </>,
                 <>
                   zónové bezdrôtové mutliroom <Bold>ozvučenie SONOS</Bold>, alebo <Bold>Bluesound</Bold>

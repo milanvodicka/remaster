@@ -26,8 +26,8 @@ const Page = () => {
           </Typography>
           <List
             items={[
-              "Návrh a realizácia infopanelov (Digital Signage)",
-              "Systémy Samsung Magic Info, Brightsign a iné",
+              "Návrh a realizáciarealizácia systému infopanelov (Digital Signage) (Digital Signage)",
+              "Systémy Samsung Magic Info, Brightsign, Avemeo a iné",
               "Inštalácia LCD alebo LED video steny",
               "Tvorba a editácia obsahu pre infopanely",
             ]}

@@ -70,7 +70,7 @@ const IndexPage = () => (
           onClick: () => navigate("/domacnost/ozvucenie-hifi"),
         },
       ]}
-      title="Remaster"
+      title="AV Integra servis"
       subtitle="Technológie pre modernú domácnosť alebo firmu."
       imageSrc={image}
       fullScreen

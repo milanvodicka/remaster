@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: 'AV Integra Servis',
-    description: 'Servis projekčnej, konferenčnej a AV techniky',
+    title: 'AV Integra servis',
+    description: 'Technológie pre modernú domácnosť alebo firmu.',
   },
   plugins: [
     {

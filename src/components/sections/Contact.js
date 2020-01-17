@@ -25,7 +25,7 @@ const Contact = () => {
           831 03, Bratislava<br/><br/>
           Peter Vodička jr. – obchodný zástupca<br/>
           Tel: <a className={classes.a} href="tel:+421 907 574 291">+421 907 574 291</a>,<br/>
-          Email: <a className={classes.a} href="mailto:vodicka@remaster.sk">vodicka@avintegra.sk</a><br/>
+          Email: <a className={classes.a} href="mailto:vodicka@avintegra.sk">vodicka@avintegra.sk</a><br/>
         </Typography>
       </Container>
   )

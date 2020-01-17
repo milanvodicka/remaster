@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: 'Remaster',
-    description: 'Your integration partner in smart, secure and multimedia appliances.',
+    title: 'AV Integra Servis',
+    description: 'Servis projekčnej, konferenčnej a AV techniky',
   },
   plugins: [
     {

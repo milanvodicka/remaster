@@ -14,8 +14,7 @@ const styles = (theme) => ({
     color: "white",
     marginBottom: theme.spacing(1),
     textAlign: "left",
-    textShadow: "0px 4px 3px rgba(0,0,0,0.4), 0px 8px 13px rgba(0,0,0,0.1), 0px 18px 23px rgba(0,0,0,0.1)",
-    lineHeight: 1.7,
+    textShadow: "0px 4px 3px rgba(0,0,0,0.5), 0px 8px 13px rgba(0,0,0,0.1), 0px 18px 23px rgba(0,0,0,0.1)",
   },
   hero: {
     "& > div:nth-child(2) > div": {
@@ -41,12 +40,12 @@ export const HeroContent = ({ title, subtitle = null, cta = null, onClick = null
       <Typography
         variant="h2"
         className={classes.typo}
-        style={{ fontWeight: 400, marginBottom: theme.spacing(4) }}
+        style={{ fontWeight: 400, marginBottom: theme.spacing(4), lineHeight: '1.1', fontSize: '3rem' }}
       >
         {title}
       </Typography>
       {subtitle &&
-        <Typography variant="h5" className={classes.typo}>
+        <Typography variant="h5" className={classes.typo} style={{ lineHeight: '1.3'}}>
           {subtitle}
         </Typography>
       }

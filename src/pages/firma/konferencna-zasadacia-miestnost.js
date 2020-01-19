@@ -12,7 +12,7 @@ const Page = () => {
     <ServicePage
       breadcrumbs={[["Služby", "/#sluzby"], ["Firma"], ["Konferenčná a zasadacia miestnosť"]]}
       title="Konferenčná a zasadacia miestnosť"
-      subtitle="Návrh a realizáciu audio - video systémov pre konferenčné a zasadacie miestnosti"
+      subtitle="Návrh a realizácia audio - video systémov pre konferenčné a zasadacie miestnosti"
       mainImage={main}
       intro={
         <Typography variant="body1" paragraph>

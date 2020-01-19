@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../../components/Layout"
 import Hero from "../../components/Hero"
-import { Typography, Container } from "@material-ui/core"
+import { Typography, Container, Box } from "@material-ui/core"
 import mainImage from "../../images/domacnost/smart-home/main.jpg"
 import iphoneImage from "../../images/domacnost/smart-home/iphone.png"
 import smartApartment from "../../images/domacnost/smart-home/smart-apartment.jpg"
@@ -24,27 +24,33 @@ const Page = () => (
       <TopSpace>
         <SideBySide image={iphoneImage} alt="Bezdrôtová inteligentná domácnosť.">
           <Typography variant="body1" paragraph>
-            Ak máte malý byt, alebo veľký dom, ak staviate, alebo už máte staršiu stavbu a chcete pre ňu jednoduché a intuitívne zabezpečenie, ovládanie a kontrolu, potom ste na správnom mieste!
+            Ak máte malý byt, alebo veľký dom, ak staviate, alebo už máte staršiu stavbu a chcete pre ňu jednoduché a intuitívne zabezpečenie, ovládanie a kontrolu, potom ste na
+            správnom mieste!
           </Typography>
         </SideBySide>
       </TopSpace>
       <TopSpace spacing={3}>
-        <FourCells
-          cells={[
-            <>
-              Cenovo dostupné systémy <Bold>Fibaro, Homey, Jablotron, Apple Homekit, Philips HUE, Lutron, RTI</Bold>.
-            </>,
-            <>
-              Použitie <Bold>bezdrotových technológií Z-WAVE, Zigbee, Wifi</Bold>, a iných, bez nutnosti ťahania káblov.
-            </>,
-            <>
-              Spočiatku môže domácnosť obsahovať iba niekoľko základných funkcií a <Bold>cenou sa Vám prispôsobí</Bold>.
-            </>,
-            <>
-              Ovládanie pomocou smartphone alebo hlasového ovládania <Bold>Alexa, Siri, Google Assistant</Bold>.
-            </>,
-          ]}
-        />
+        <Box>
+          <Typography variant="h4" gutterBottom>
+            Naša ponuka
+          </Typography>
+          <FourCells
+            cells={[
+              <>
+                Cenovo dostupné systémy <Bold>Fibaro, Homey, Jablotron, Apple Homekit, Philips HUE, Lutron, RTI</Bold>.
+              </>,
+              <>
+                Použitie <Bold>bezdrotových technológií Z-WAVE, Zigbee, Wifi</Bold>, a iných, bez nutnosti ťahania káblov.
+              </>,
+              <>
+                Spočiatku môže domácnosť obsahovať iba niekoľko základných funkcií a <Bold>cenou sa Vám prispôsobí</Bold>.
+              </>,
+              <>
+                Ovládanie pomocou smartphone alebo hlasového ovládania <Bold>Alexa, Siri, Google Assistant</Bold>.
+              </>,
+            ]}
+          />
+        </Box>
       </TopSpace>
     </Container>
 

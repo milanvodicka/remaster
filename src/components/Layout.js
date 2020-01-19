@@ -50,7 +50,7 @@ const useStyles = makeStyles(theme => {
       "&:hover": {
         textDecoration: "underline",
       },
-    }
+    },
   }
 })
 
@@ -109,7 +109,6 @@ const Layout = ({ title = "", children }) => {
   }, [])
   const classes = useStyles()
   const theme = useTheme()
-  console.log("theme: ", theme)
   const phone = !useMediaQuery(theme.breakpoints.up("sm"))
   const [menuEl, setMenuEl] = useState(null)
   const openMenu = event => setMenuEl(event.currentTarget)
@@ -207,24 +206,25 @@ const Layout = ({ title = "", children }) => {
         </Grid>
       </AppBar>
       <div className={classes.container}>{children}</div>
-      <Container
+      <div
         style={{
           backgroundColor: "#151515",
-          paddingTop: theme.spacing(4),
-          paddingBottom: theme.spacing(4),
         }}
       >
-        <Typography variant="body1" style={{ color: theme.palette.getContrastText("#151515") }}>
-          &copy; AV Integra servis, s. r. o.
-          <br />
-          <a
-            href="/servisne-podmienky.pdf"
-            className={classes.footerA}
-          >
-            Servisné podmienky
-          </a>
-        </Typography>
-      </Container>
+        <Container
+          style={{
+            paddingTop: theme.spacing(4),
+            paddingBottom: theme.spacing(4),
+          }}
+        >
+          <Typography variant="body1" style={{ color: theme.palette.getContrastText("#151515") }}>
+            &copy; AV Integra servis, s. r. o.;{" "}
+            <a href="/servisne-podmienky.pdf" className={classes.footerA}>
+              Servisné podmienky
+            </a>
+          </Typography>
+        </Container>
+      </div>
     </>
   )
 }

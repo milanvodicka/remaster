@@ -5,6 +5,7 @@ import offer from "../../images/firma/reklamne-displeje-videosteny/offer.jpg"
 import { Typography } from "@material-ui/core"
 import List from "../../components/List"
 import Link from "../../components/Link"
+import Bold from"../../components/Bold"
 
 const Page = () => {
   return (

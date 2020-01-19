@@ -24,8 +24,7 @@ const Page = () => (
       <TopSpace>
         <SideBySide image={iphoneImage} alt="Bezdrôtová inteligentná domácnosť.">
           <Typography variant="body1" paragraph>
-            Ak máte malý byt, alebo veľký dom, ak staviate, alebo už máte staršiu stavbu a chcete jej <Bold>jednoduché a intuitívne zabezpečenie, ovládanie a kontrolu</Bold>, potom
-            aj Vy dnes môžete vlastniť inteligentnú domácnosť.
+            Ak máte malý byt, alebo veľký dom, ak staviate, alebo už máte staršiu stavbu a chcete pre ňu jednoduché a intuitívne zabezpečenie, ovládanie a kontrolu, potom ste na správnom mieste!
           </Typography>
         </SideBySide>
       </TopSpace>
@@ -33,7 +32,7 @@ const Page = () => (
         <FourCells
           cells={[
             <>
-              Ak máte malý byt, alebo veľký dom, ak staviate, alebo už máte staršiu stavbu a chcete pre ňu jednoduché a intuitívne zabezpečenie, ovládanie a kontrolu, potom ste na správnom mieste!
+              Cenovo dostupné systémy <Bold>Fibaro, Homey, Jablotron, Apple Homekit, Philips HUE, Lutron, RTI</Bold>.
             </>,
             <>
               Použitie <Bold>bezdrotových technológií Z-WAVE, Zigbee, Wifi</Bold>, a iných, bez nutnosti ťahania káblov.

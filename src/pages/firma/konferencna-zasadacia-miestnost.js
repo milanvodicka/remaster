@@ -12,11 +12,11 @@ const Page = () => {
     <ServicePage
       breadcrumbs={[["Služby", "/#sluzby"], ["Firma"], ["Konferenčná a zasadacia miestnosť"]]}
       title="Konferenčná a zasadacia miestnosť"
-      subtitle="Návrh a realizáciu audio - video zariadení pre konferenčné a zasadacie miestnosti"
+      subtitle="Návrh a realizáciu audio - video systémov pre konferenčné a zasadacie miestnosti"
       mainImage={main}
       intro={
         <Typography variant="body1" paragraph>
-          Zabezpečujeme návrh a realizáciu audio - video zariadení pre konferenčné a zasadacie miestnosti. Ponúkame inštaláciu TV a projektorov, ozvučenie a videokonferenčné
+          Zabezpečujeme návrh a realizáciu audio - video systémov pre konferenčné a zasadacie miestnosti. Ponúkame inštaláciu TV a projektorov, ozvučenie a videokonferenčné
           systémy.
         </Typography>
       }

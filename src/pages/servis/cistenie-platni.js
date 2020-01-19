@@ -70,6 +70,11 @@ const Page = () => {
       offerTitle="Naša ponuka"
       end={
         <Typography variant="body1">
+          Adresa: Pluhová 40/a, Bratislava<br/>
+          Otváracie hodiny: pondelok až piatok od 9:00 do 17:00<br/>
+          Tel: <Link href="tel:+421 903 704 700">+421 903 704 700</Link>
+          <br/>
+          <br/>
           <Link href="/#kontakt">Kontaktujte nás</Link> a dohodnite si stretnutie v našom showroome.
         </Typography>
       }

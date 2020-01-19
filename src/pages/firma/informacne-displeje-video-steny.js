@@ -26,8 +26,8 @@ const Page = () => {
           </Typography>
           <List
             items={[
-              "Návrh a realizáciarealizácia systému infopanelov (Digital Signage) (Digital Signage)",
-              "Systémy Samsung Magic Info, Brightsign, Avemeo a iné",
+              "Návrh a realizáciarealizácia systému infopanelov (Digital Signage)",
+              <>Systémy <Bold>Samsung Magic Info, Brightsign, Avemeo</Bold> a iné</>,
               "Inštalácia LCD alebo LED video steny",
               "Tvorba a editácia obsahu pre infopanely",
             ]}
@@ -44,9 +44,9 @@ const Page = () => {
           <List
             items={[
               "Možnosť manažovania rozsiahlej siete obrazoviek",
-              "Možnosti úpravy obsahu a vzdialenej správy",
+              "Možnosti jednoduchej úpravy obsahu a vzdialenej správy",
               "Počasie, kurzový lístok, videá, obrázky, live prenos a iné",
-              "Interaktivita cez dotykovú plochu, kameru, senzor pohybu a iné",
+              "Interaktivita cez dotykovú plochu, senzor pohybu a iné",
             ]}
           />
         </>

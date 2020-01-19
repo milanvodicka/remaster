@@ -33,7 +33,7 @@ const Page = () => (
         <FourCells
           cells={[
             <>
-              Cenovo dostupné systémy <Bold>Fibaro, Homey, Jablotron, Apple Homekit, Philips HUE, Lutron, RTI</Bold>.
+              Ak máte malý byt, alebo veľký dom, ak staviate, alebo už máte staršiu stavbu a chcete pre ňu jednoduché a intuitívne zabezpečenie, ovládanie a kontrolu, potom ste na správnom mieste!
             </>,
             <>
               Použitie <Bold>bezdrotových technológií Z-WAVE, Zigbee, Wifi</Bold>, a iných, bez nutnosti ťahania káblov.

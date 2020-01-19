@@ -16,8 +16,8 @@ const Page = () => {
       mainImage={main}
       intro={
         <Typography variant="body1" paragraph>
-          Zabezpečujeme príjem a rozvod satelitného a terestriálneho TV vysielania v akýchkoľvek priestoroch, <Bold>od malej kancelárie, až po budovy a hotely</Bold>. Ponúkame
-          taktiež návrh, dodávku a inštalácie TV, displejov a projektorov.
+          Zabezpečujeme návrh a realizáciu audio - video zariadení pre konferenčné a zasadacie miestnosti. Ponúkame inštaláciu TV a projektorov, ozvučenie a videokonferenčné
+          systémy.
         </Typography>
       }
       offer={
@@ -29,8 +29,8 @@ const Page = () => {
             items={[
               "Inštalácia TV, projektorov a ozvučenia",
               "Káblový, alebo bezdrôtový prenos obrazu a zvuku",
-              "Ovládanie celej miestnosti z tabletu - RTI, Crestron",
-              "Videokonferenčné systémy Logitech, Cisco, Polycom",
+              <>Ovládanie celej miestnosti z tabletu - <Bold>RTI, Crestron</Bold></>,
+              <>Videokonferenčné systémy <Bold>Logitech, Cisco, Polycom</Bold></>,
             ]}
           />
         </>
@@ -43,12 +43,7 @@ const Page = () => {
             Vybrané vlastnosti našich systémov
           </Typography>
           <List
-            items={[
-              "bezdrôtový prenos videa a zvuku",
-              "externé mikrofóny pre videokonferenciu",
-              "videokonferencia pre Skype, Teams a iné",
-              "možnosť ovládania svetiel a žalúzií",
-            ]}
+            items={["bezdrôtový prenos videa a zvuku", "projektor a projekčné plátno zabudované v strope", "videokonferencia pre Skype, Teams a iné", "možnosť ovládania svetiel a žalúzií"]}
           />
         </>
       }

@@ -30,12 +30,12 @@ const AboutUs = () => {
         <Grid item sm={6}>
           <Typography variant="body1">
             Sme moderná spoločnosť, ktorá sa orientuje najmä na poskytovanie
-            služieb a dobrého servisu, a preto ponúkame našim zákazníkom pomoc
+            služieb a dobrého servisu, a preto ponúkame našim klientom pomoc
             aj s produktami, ktoré si zakúpili sami. Našou pridanou hodnotou je
             totiž know-how a skúsenosti, ktorými vieme pomôcť našim klientom.
             Máme dlhoročné skúsenosti so starostlivosťou o zákazníkov a vieme,
             ako veľmi si cenia kvalitnú servisnú a popredajnú starostlivosť.
-            O našich zákazníkov sa staráme dlhodobo. Vždy sa preto budeme riadiť
+            O našich klientov sa staráme dlhodobo. Vždy sa preto budeme riadiť
             prozákazníckou filozofiou a poslaním prinášať pohodlie, bezpečnosť
             a slobodu pri používaní našich systémov a riešení.
           </Typography>
